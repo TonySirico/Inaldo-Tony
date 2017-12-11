@@ -12,6 +12,9 @@
 		0057E3F91FDEA0A2005F68D7 /* Tasks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0057E3F71FDEA0A2005F68D7 /* Tasks.storyboard */; };
 		0057E3FB1FDEA0B3005F68D7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0057E3FA1FDEA0B3005F68D7 /* Profile.storyboard */; };
 		0057E3FD1FDEA0FB005F68D7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057E3FC1FDEA0FB005F68D7 /* HomeViewController.swift */; };
+		324910C61FDEA1B8004FF991 /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324910C51FDEA1B8004FF991 /* RequestsViewController.swift */; };
+		324910C81FDEA1C7004FF991 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324910C71FDEA1C7004FF991 /* TasksViewController.swift */; };
+		324910CA1FDEA1D9004FF991 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324910C91FDEA1D9004FF991 /* ProfileViewController.swift */; };
 		32E80C3B1FDE943F0006EF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E80C3A1FDE943F0006EF76 /* AppDelegate.swift */; };
 		32E80C3D1FDE943F0006EF76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E80C3C1FDE943F0006EF76 /* ViewController.swift */; };
 		32E80C401FDE943F0006EF76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E80C3E1FDE943F0006EF76 /* Main.storyboard */; };
@@ -44,6 +47,9 @@
 		0057E3F81FDEA0A2005F68D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Inaldo&Tony/Base.lproj/Tasks.storyboard"; sourceTree = "<group>"; };
 		0057E3FA1FDEA0B3005F68D7 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		0057E3FC1FDEA0FB005F68D7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		324910C51FDEA1B8004FF991 /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
+		324910C71FDEA1C7004FF991 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		324910C91FDEA1D9004FF991 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		32E80C371FDE943F0006EF76 /* Inaldo&Tony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inaldo&Tony.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E80C3A1FDE943F0006EF76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32E80C3C1FDE943F0006EF76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,8 +94,11 @@
 			isa = PBXGroup;
 			children = (
 				0057E3FA1FDEA0B3005F68D7 /* Profile.storyboard */,
+				324910C91FDEA1D9004FF991 /* ProfileViewController.swift */,
 				0057E3F71FDEA0A2005F68D7 /* Tasks.storyboard */,
+				324910C71FDEA1C7004FF991 /* TasksViewController.swift */,
 				0057E3F51FDEA07B005F68D7 /* Requests.storyboard */,
+				324910C51FDEA1B8004FF991 /* RequestsViewController.swift */,
 				0057E3F21FDEA03A005F68D7 /* Home.storyboard */,
 				0057E3FC1FDEA0FB005F68D7 /* HomeViewController.swift */,
 				32E80C391FDE943F0006EF76 /* Inaldo&Tony */,
@@ -278,8 +287,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				324910CA1FDEA1D9004FF991 /* ProfileViewController.swift in Sources */,
 				32E80C3D1FDE943F0006EF76 /* ViewController.swift in Sources */,
 				32E80C3B1FDE943F0006EF76 /* AppDelegate.swift in Sources */,
+				324910C81FDEA1C7004FF991 /* TasksViewController.swift in Sources */,
+				324910C61FDEA1B8004FF991 /* RequestsViewController.swift in Sources */,
 				0057E3FD1FDEA0FB005F68D7 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
