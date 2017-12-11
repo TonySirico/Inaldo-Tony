@@ -25,6 +25,20 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func tapAction(_ sender: UITapGestureRecognizer) {
+        if searchBarOutlet.isFirstResponder {
+            searchBarOutlet.resignFirstResponder()
+        } else {
+            searchBarOutlet.becomeFirstResponder()
+        }
+    }
+    
+    @IBAction func navButtonAction(_ sender: UIButton) {
+        searchBarOutlet.becomeFirstResponder()
+    }
+    
+    @IBOutlet weak var searchBarOutlet: UISearchBar!
+    
     @IBOutlet weak var firstButtonOutlet: UIButton!
     @IBAction func firstButtonAction(_ sender: UIButton) {
         performSegue(withIdentifier: "categorySegue", sender: self)
