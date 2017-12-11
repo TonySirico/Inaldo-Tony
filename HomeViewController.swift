@@ -28,8 +28,6 @@ class HomeViewController: UIViewController {
     @IBAction func tapAction(_ sender: UITapGestureRecognizer) {
         if searchBarOutlet.isFirstResponder {
             searchBarOutlet.resignFirstResponder()
-        } else {
-            searchBarOutlet.becomeFirstResponder()
         }
     }
     
