@@ -13,18 +13,45 @@
         <!--Tasks-->
         <scene sceneID="JQc-qu-0Pe">
             <objects>
-                <viewController title="Tasks" id="J3h-9j-a82" customClass="TasksViewController" customModule="Inaldo_Tony" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Tasks" automaticallyAdjustsScrollViewInsets="NO" id="J3h-9j-a82" customClass="TasksViewController" customModule="Inaldo_Tony" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qjx-bv-TM4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="feT-qG-pf8">
+                                <rect key="frame" x="61" y="28" width="254" height="29"/>
+                                <segments>
+                                    <segment title="Buyer"/>
+                                    <segment title="Seller"/>
+                                </segments>
+                                <connections>
+                                    <action selector="ChangeLbl:" destination="J3h-9j-a82" eventType="valueChanged" id="wGw-FG-dLJ"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMt-0l-SL4">
+                                <rect key="frame" x="25" y="112" width="197" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="feT-qG-pf8" firstAttribute="top" secondItem="YTo-76-jL1" secondAttribute="top" constant="8" id="2fm-2K-bjg"/>
+                            <constraint firstItem="feT-qG-pf8" firstAttribute="leading" secondItem="YTo-76-jL1" secondAttribute="leading" constant="127" id="Nje-72-nXP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="YTo-76-jL1"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tasks" id="pmM-X5-Nw7"/>
+                    <connections>
+                        <outlet property="Controller" destination="feT-qG-pf8" id="oX7-eE-gYU"/>
+                        <outlet property="Label" destination="UMt-0l-SL4" id="UxK-MC-BVT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fst-ZW-bEo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-938" y="-775"/>
+            <point key="canvasLocation" x="-938.39999999999998" y="-775.86206896551732"/>
         </scene>
     </scenes>
 </document>
