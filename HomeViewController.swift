@@ -9,10 +9,14 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor.clear
+        
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +25,50 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func tapAction(_ sender: UITapGestureRecognizer) {
+        if searchBarOutlet.isFirstResponder {
+            searchBarOutlet.resignFirstResponder()
+        } else {
+            searchBarOutlet.becomeFirstResponder()
+        }
+    }
+    
+    @IBAction func navButtonAction(_ sender: UIButton) {
+        searchBarOutlet.becomeFirstResponder()
+    }
+    
+    @IBOutlet weak var searchBarOutlet: UISearchBar!
+    
+    @IBOutlet weak var firstButtonOutlet: UIButton!
+    @IBAction func firstButtonAction(_ sender: UIButton) {
+        performSegue(withIdentifier: "categorySegue", sender: self)
+    }
+    
+    @IBOutlet weak var secondButtonOutlet: UIButton!
+    @IBAction func secondButtonAction(_ sender: UIButton) {
+        performSegue(withIdentifier: "categorySegue", sender: self)
+    }
+    
+    @IBOutlet weak var thirdButtonOutlet: UIButton!
+    @IBAction func thirdButtonAction(_ sender: UIButton) {
+        performSegue(withIdentifier: "categorySegue", sender: self)
+    }
+    
+    @IBOutlet weak var fourthButtonOutlet: UIButton!
+    @IBAction func fourthButtonAction(_ sender: UIButton) {
+        performSegue(withIdentifier: "categorySegue", sender: self)
+    }
+    
+    @IBOutlet weak var fifthButtonOutlet: UIButton!
+    @IBAction func fifthButtonAction(_ sender: UIButton) {
+        performSegue(withIdentifier: "categorySegue", sender: self)
+    }
+    
+    @IBOutlet weak var sixthButtonOutlet: UIButton!
+    @IBAction func sixthButtonAction(_ sender: UIButton) {
+        performSegue(withIdentifier: "categorySegue", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 
