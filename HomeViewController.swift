@@ -21,7 +21,30 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBOutlet weak var firstButtonOutlet: UIButton!
+    @IBAction func firstButtonAction(_ sender: UIButton) {
+    }
+    
+    @IBOutlet weak var secondButtonOutlet: UIButton!
+    @IBAction func secondButtonAction(_ sender: UIButton) {
+    }
+    
+    @IBOutlet weak var thirdButtonOutlet: UIButton!
+    @IBAction func thirdButtonAction(_ sender: UIButton) {
+    }
+    
+    @IBOutlet weak var fourthButtonOutlet: UIButton!
+    @IBAction func fourthButtonAction(_ sender: UIButton) {
+    }
+    
+    @IBOutlet weak var fifthButtonOutlet: UIButton!
+    @IBAction func fifthButtonAction(_ sender: UIButton) {
+    }
+    
+    @IBOutlet weak var sixthButtonOutlet: UIButton!
+    @IBAction func sixthButtonAction(_ sender: UIButton) {
+    }
+    
     /*
     // MARK: - Navigation
 
