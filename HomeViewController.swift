@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = UIColor.clear
         
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -28,11 +30,51 @@ class HomeViewController: UIViewController {
     @IBAction func tapAction(_ sender: UITapGestureRecognizer) {
         if searchBarOutlet.isFirstResponder {
             searchBarOutlet.resignFirstResponder()
+            UIView.animate(withDuration: 0.3, animations: {self.firstButtonOutlet.center = CGPoint(x: 99, y:168)
+            })
+            UIView.animate(withDuration: 0.3, animations: {self.secondButtonOutlet.center = CGPoint(x: 276, y:168)
+            })
+            UIView.animate(withDuration: 0.3, animations: {self.thirdButtonOutlet.center = CGPoint(x: 99, y:343)
+            })
+            UIView.animate(withDuration: 0.3, animations: {self.fourthButtonOutlet.center = CGPoint(x: 276, y:343)
+            })
+            UIView.animate(withDuration: 0.3, animations: {self.fifthButtonOutlet.center = CGPoint(x: 99, y:518)
+            })
+            UIView.animate(withDuration: 0.3, animations: {self.sixthButtonOutlet.center = CGPoint(x: 276, y:518)
+            })
         }
     }
     
     @IBAction func navButtonAction(_ sender: UIButton) {
         searchBarOutlet.becomeFirstResponder()
+        UIView.animate(withDuration: 0.3, animations: {self.firstButtonOutlet.center = CGPoint(x: -75, y:168)
+        })
+        UIView.animate(withDuration: 0.3, animations: {self.secondButtonOutlet.center = CGPoint(x: 450, y:168)
+        })
+        UIView.animate(withDuration: 0.3, animations: {self.thirdButtonOutlet.center = CGPoint(x: -75, y:343)
+        })
+        UIView.animate(withDuration: 0.3, animations: {self.fourthButtonOutlet.center = CGPoint(x: 450, y:343)
+        })
+        UIView.animate(withDuration: 0.3, animations: {self.fifthButtonOutlet.center = CGPoint(x: -75, y:518)
+        })
+        UIView.animate(withDuration: 0.3, animations: {self.sixthButtonOutlet.center = CGPoint(x: 450, y:518)
+        })
+    }
+    
+    @IBAction func searchBarButton(_ sender: UIButton) {
+        searchBarOutlet.becomeFirstResponder()
+        UIView.animate(withDuration: 0.3, animations: {self.firstButtonOutlet.center = CGPoint(x: -75, y:168)
+        })
+        UIView.animate(withDuration: 0.3, animations: {self.secondButtonOutlet.center = CGPoint(x: 450, y:168)
+        })
+        UIView.animate(withDuration: 0.3, animations: {self.thirdButtonOutlet.center = CGPoint(x: -75, y:343)
+        })
+        UIView.animate(withDuration: 0.3, animations: {self.fourthButtonOutlet.center = CGPoint(x: 450, y:343)
+        })
+        UIView.animate(withDuration: 0.3, animations: {self.fifthButtonOutlet.center = CGPoint(x: -75, y:518)
+        })
+        UIView.animate(withDuration: 0.3, animations: {self.sixthButtonOutlet.center = CGPoint(x: 450, y:518)
+        })
     }
     
     @IBOutlet weak var searchBarOutlet: UISearchBar!
