@@ -12,32 +12,92 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet var Controller: UISegmentedControl!
     @IBOutlet weak var TableView: UITableView!
+    @IBOutlet weak var SecondTableView: UITableView!
+    
+    struct PreviewDetail
+    {
+        let title: String
+        let preferredHeight: Double
+    }
+    
+    let sampleData =
+    [
+        PreviewDetail(title: "Small", preferredHeight: 160.0),
+        PreviewDetail(title: "Medium", preferredHeight: 320.0),
+        PreviewDetail(title: "Large", preferredHeight: 0.0) // 0.0 to get the default height.
+    ]
+    
+    let sampleData1 =
+     
+    [
+        PreviewDetail(title: "Small 2", preferredHeight: 160.0),
+        PreviewDetail(title: "Medium 2", preferredHeight: 320.0),
+        PreviewDetail(title: "Large 2", preferredHeight: 0.0) // 0.0 to get the default height.
+    ]
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        
+        TableView.dataSource = self
+        TableView.delegate = self
+//        TableView.register(TableView, forCellReuseIdentifier: "colorCell")
+        
+        SecondTableView.dataSource = self
+        SecondTableView.delegate = self
+//        SecondTableView.register(SecondTableView, forCellReuseIdentifier: "secondCell")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 1
+        var count:Int?
+        
+        if tableView == self.TableView
+        {
+            count = sampleData.count
+        }
+        
+        if tableView == self.SecondTableView
+        {
+            count = sampleData1.count
+        }
+        
+        return count!
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath)
+        var cell: UITableViewCell?
         
+        if tableView == self.TableView
+        {
+            cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath)
+            let previewDetail = sampleData[indexPath.row]
+            cell!.textLabel!.text = previewDetail.title
+        }
+        
+        if tableView == self.SecondTableView
+        {
+            cell = tableView.dequeueReusableCell(withIdentifier: "secondCell", for: indexPath)
+            let previewDetail = sampleData1[indexPath.row]
+            cell!.textLabel!.text = previewDetail.title
+        }
+        
+        
+        return cell!
+        
+    }
+        
+/*
+        let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath)
         
         if indexPath.row == 0
         {
             cell.backgroundColor = .red
         }
-        else
+        else if indexPath.row == 1
         {
             cell.backgroundColor = .black
         }
@@ -45,32 +105,22 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
-/*
-    @IBAction func ChangeLbl(_ sender: UISegmentedControl)
+ 
+    @IBAction func Controller(_ sender: UISegmentedControl)
     {
         
         if Controller.selectedSegmentIndex == 0
         {
-         
-        Label.text = "Hello World"
+            
+//            Label.text = "Hello World"
             
         }
         if Controller.selectedSegmentIndex == 1
         {
-        Label.text = "Hello Intersect"
+//            Label.text = "Hello Intersect"
             
         }
         
-    }
-    
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    }    */
 
 }
