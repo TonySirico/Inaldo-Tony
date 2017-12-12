@@ -96,6 +96,7 @@ class HomeViewController: UIViewController {
     
     @IBAction func tapAction(_ sender: UITapGestureRecognizer) {
         if searchBarOutlet.isFirstResponder {
+            searchBarOutlet.text = ""
             searchBarOutlet.resignFirstResponder()
             moveButtonsIn()
         }
@@ -114,6 +115,11 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var backButtonOutlet: UIButton!
     @IBAction func backButtonAction(_ sender: UIButton) {
         moveLabelOut()
+    }
+    
+    @IBAction func swipeAction(_ sender: UISwipeGestureRecognizer) {
+        moveLabelOut()
+        searchBarOutlet.resignFirstResponder()
     }
     
     @IBOutlet weak var firstButtonOutlet: UIButton!
