@@ -77,32 +77,26 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var firstButtonOutlet: UIButton!
     @IBAction func firstButtonAction(_ sender: UIButton) {
-        performSegue(withIdentifier: "categorySegue", sender: self)
     }
     
     @IBOutlet weak var secondButtonOutlet: UIButton!
     @IBAction func secondButtonAction(_ sender: UIButton) {
-        performSegue(withIdentifier: "categorySegue", sender: self)
     }
     
     @IBOutlet weak var thirdButtonOutlet: UIButton!
     @IBAction func thirdButtonAction(_ sender: UIButton) {
-        performSegue(withIdentifier: "categorySegue", sender: self)
     }
     
     @IBOutlet weak var fourthButtonOutlet: UIButton!
     @IBAction func fourthButtonAction(_ sender: UIButton) {
-        performSegue(withIdentifier: "categorySegue", sender: self)
     }
     
     @IBOutlet weak var fifthButtonOutlet: UIButton!
     @IBAction func fifthButtonAction(_ sender: UIButton) {
-        performSegue(withIdentifier: "categorySegue", sender: self)
     }
     
     @IBOutlet weak var sixthButtonOutlet: UIButton!
     @IBAction func sixthButtonAction(_ sender: UIButton) {
-        performSegue(withIdentifier: "categorySegue", sender: self)
     }
     
     /*
