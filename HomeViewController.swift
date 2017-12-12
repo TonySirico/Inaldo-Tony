@@ -16,6 +16,8 @@ class HomeViewController: UIViewController {
         categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y: -20)
         
         backButtonOutlet.center = CGPoint(x: 51, y: -20)
+        
+        tableViewOutlet.frame.origin = CGPoint (x:0, y:super.view.frame.height)
         // Do any additional setup after loading the view.
     }
 
@@ -56,7 +58,7 @@ class HomeViewController: UIViewController {
     
     func moveLabelIn() {
         moveButtonsOut()
-        UIView.animate(withDuration: 0.3, animations: {self.categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:44)
+        UIView.animate(withDuration: 0.3, animations: {self.categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:50)
         })
         UIView.animate(withDuration: 0.3, animations: {self.searchBarOutlet.center = CGPoint(x: super.view.frame.width/2, y:-56)
         })
@@ -64,7 +66,7 @@ class HomeViewController: UIViewController {
         })
         UIView.animate(withDuration: 0.3, animations: {self.searchBarCancelButtonAreaOutlet.center = CGPoint(x: 354.5, y:-56)
         })
-        UIView.animate(withDuration: 0.3, animations: {self.backButtonOutlet.center = CGPoint(x: 51, y:44)
+        UIView.animate(withDuration: 0.3, animations: {self.backButtonOutlet.center = CGPoint(x: 51, y:50)
         })
     }
     
@@ -129,9 +131,13 @@ class HomeViewController: UIViewController {
     
     @IBAction func swipeAction(_ sender: UISwipeGestureRecognizer) {
         searchBarOutlet.resignFirstResponder()
-        prepareButtonsForBack()
+        if firstButtonOutlet.center != CGPoint(x:99, y:168) {
+            prepareButtonsForBack()
+        }
         moveLabelOut()
     }
+    
+    @IBOutlet weak var tableViewOutlet: UITableView!
     
     @IBOutlet weak var firstButtonOutlet: UIButton!
     @IBAction func firstButtonAction(_ sender: UIButton) {
@@ -168,6 +174,7 @@ class HomeViewController: UIViewController {
         categoryLabelOutlet.text = "Others"
         moveLabelIn()
     }
+    
     /*
     // MARK: - Navigation
 
