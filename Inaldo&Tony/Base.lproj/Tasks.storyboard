@@ -18,16 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="feT-qG-pf8">
-                                <rect key="frame" x="61" y="28" width="254" height="29"/>
-                                <segments>
-                                    <segment title="Buyer"/>
-                                    <segment title="Seller"/>
-                                </segments>
-                                <connections>
-                                    <action selector="ChangeLbl:" destination="J3h-9j-a82" eventType="valueChanged" id="wGw-FG-dLJ"/>
-                                </connections>
-                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gF0-6H-aVJ">
                                 <rect key="frame" x="0.0" y="112" width="375" height="501"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -47,12 +37,19 @@
                                     <outlet property="delegate" destination="J3h-9j-a82" id="S5d-T0-55K"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="feT-qG-pf8">
+                                <rect key="frame" x="138" y="20" width="99" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Buyer"/>
+                                    <segment title="Seller"/>
+                                </segments>
+                                <connections>
+                                    <action selector="ChangeLbl:" destination="J3h-9j-a82" eventType="valueChanged" id="wGw-FG-dLJ"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="feT-qG-pf8" firstAttribute="top" secondItem="YTo-76-jL1" secondAttribute="top" constant="8" id="2fm-2K-bjg"/>
-                            <constraint firstItem="feT-qG-pf8" firstAttribute="leading" secondItem="YTo-76-jL1" secondAttribute="leading" constant="127" id="Nje-72-nXP"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="YTo-76-jL1"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tasks" id="pmM-X5-Nw7"/>

@@ -22,8 +22,13 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         if indexPath.row == 0
         {
-            
+            cell.backgroundColor = .red
         }
+        else
+        {
+            cell.backgroundColor = .black
+        }
+        
         
         
         
