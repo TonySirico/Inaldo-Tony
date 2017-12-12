@@ -110,7 +110,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ei-DP-VCQ">
                                 <rect key="frame" x="17" y="34" width="68" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <state key="normal" title="&lt;"/>
                                 <connections>
                                     <action selector="backButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="TEP-Za-OvH"/>
                                 </connections>

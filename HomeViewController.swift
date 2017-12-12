@@ -82,6 +82,15 @@ class HomeViewController: UIViewController {
         })
     }
     
+    func prepareButtonsForBack() {
+        self.firstButtonOutlet.center = CGPoint (x:-252, y:168)
+        self.thirdButtonOutlet.center = CGPoint (x:-252, y:343)
+        self.fifthButtonOutlet.center = CGPoint (x:-252, y:518)
+        self.secondButtonOutlet.center = CGPoint (x:-75, y:168)
+        self.fourthButtonOutlet.center = CGPoint (x:-75, y:343)
+        self.sixthButtonOutlet.center = CGPoint (x:-75, y:518)
+    }
+    
     @IBOutlet weak var searchBarCancelButtonAreaOutlet: UIButton!
     @IBAction func searchBarCancelButtonAreaAction(_ sender: UIButton) {
         if searchBarOutlet.text != "" {
@@ -114,12 +123,14 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var backButtonOutlet: UIButton!
     @IBAction func backButtonAction(_ sender: UIButton) {
+        searchBarOutlet.resignFirstResponder()
         moveLabelOut()
     }
     
     @IBAction func swipeAction(_ sender: UISwipeGestureRecognizer) {
-        moveLabelOut()
         searchBarOutlet.resignFirstResponder()
+        prepareButtonsForBack()
+        moveLabelOut()
     }
     
     @IBOutlet weak var firstButtonOutlet: UIButton!
