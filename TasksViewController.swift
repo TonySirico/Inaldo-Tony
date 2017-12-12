@@ -89,23 +89,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell!
         
     }
-        
-/*
-        let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath)
-        
-        if indexPath.row == 0
-        {
-            cell.backgroundColor = .red
-        }
-        else if indexPath.row == 1
-        {
-            cell.backgroundColor = .black
-        }
-        
-        return cell
-    }
     
- 
     @IBAction func Controller(_ sender: UISegmentedControl)
     {
         
@@ -121,6 +105,6 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
         }
         
-    }    */
+    }
 
 }
