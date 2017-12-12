@@ -168,7 +168,6 @@ class HomeViewController: UIViewController {
         categoryLabelOutlet.text = "Others"
         moveLabelIn()
     }
-    
     /*
     // MARK: - Navigation
 
