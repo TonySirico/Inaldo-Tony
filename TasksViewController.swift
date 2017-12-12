@@ -8,12 +8,31 @@
 
 import UIKit
 
-class TasksViewController: UIViewController {
+class TasksViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
+{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath)
+        
+        if indexPath.row == 0
+        {
+            
+        }
+        
+        
+        
+        return cell
+    }
+    
     
     @IBOutlet var Controller: UISegmentedControl!
-    
-    @IBOutlet var Label: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -25,8 +44,10 @@ class TasksViewController: UIViewController {
     }
 
     
+    
+    
 
-    @IBAction func ChangeLbl(_ sender: UISegmentedControl)
+/*    @IBAction func ChangeLbl(_ sender: UISegmentedControl)
     {
         
         if Controller.selectedSegmentIndex == 0
@@ -43,7 +64,7 @@ class TasksViewController: UIViewController {
         
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
