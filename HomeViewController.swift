@@ -12,6 +12,10 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y: -20)
+        
+        backButtonOutlet.center = CGPoint(x: 51, y: -20)
         // Do any additional setup after loading the view.
     }
 
@@ -50,6 +54,35 @@ class HomeViewController: UIViewController {
         })
     }
     
+    func moveLabelIn() {
+        moveButtonsOut()
+        UIView.animate(withDuration: 0.3, animations: {self.categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:44)
+        })
+        UIView.animate(withDuration: 0.3, animations: {self.searchBarOutlet.center = CGPoint(x: super.view.frame.width/2, y:-56)
+        })
+        UIView.animate(withDuration: 0.3, animations: {self.searchBarButtonOutlet.center = CGPoint(x: 167, y:-56)
+        })
+        UIView.animate(withDuration: 0.3, animations: {self.searchBarCancelButtonAreaOutlet.center = CGPoint(x: 354.5, y:-56)
+        })
+        UIView.animate(withDuration: 0.3, animations: {self.backButtonOutlet.center = CGPoint(x: 51, y:44)
+        })
+    }
+    
+    func moveLabelOut() {
+        moveButtonsIn()
+        UIView.animate(withDuration: 0.3, animations: {self.categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:-20)
+        })
+        UIView.animate(withDuration: 0.3, animations: {self.searchBarOutlet.center = CGPoint(x: super.view.frame.width/2, y:54)
+        })
+        UIView.animate(withDuration: 0.3, animations: {self.searchBarButtonOutlet.center = CGPoint(x: 167, y:54)
+        })
+        UIView.animate(withDuration: 0.3, animations: {self.searchBarCancelButtonAreaOutlet.center = CGPoint(x: 354.5, y:54)
+        })
+        UIView.animate(withDuration: 0.3, animations: {self.backButtonOutlet.center = CGPoint(x: 51, y:-20)
+        })
+    }
+    
+    @IBOutlet weak var searchBarCancelButtonAreaOutlet: UIButton!
     @IBAction func searchBarCancelButtonAreaAction(_ sender: UIButton) {
         if searchBarOutlet.text != "" {
             searchBarOutlet.text = ""
@@ -68,35 +101,55 @@ class HomeViewController: UIViewController {
         }
     }
     
-    @IBAction func searchBarButton(_ sender: UIButton) {
+    @IBOutlet weak var searchBarButtonOutlet: UIButton!
+    @IBAction func searchBarButtonAction(_ sender: UIButton) {
         searchBarOutlet.becomeFirstResponder()
         moveButtonsOut()
     }
     
     @IBOutlet weak var searchBarOutlet: UISearchBar!
     
+    @IBOutlet weak var categoryLabelOutlet: UILabel!
+    
+    @IBOutlet weak var backButtonOutlet: UIButton!
+    @IBAction func backButtonAction(_ sender: UIButton) {
+        moveLabelOut()
+    }
+    
     @IBOutlet weak var firstButtonOutlet: UIButton!
     @IBAction func firstButtonAction(_ sender: UIButton) {
+        categoryLabelOutlet.text = "Coding"
+        moveLabelIn()
     }
     
     @IBOutlet weak var secondButtonOutlet: UIButton!
     @IBAction func secondButtonAction(_ sender: UIButton) {
+        categoryLabelOutlet.text = "Design"
+        moveLabelIn()
     }
     
     @IBOutlet weak var thirdButtonOutlet: UIButton!
     @IBAction func thirdButtonAction(_ sender: UIButton) {
+        categoryLabelOutlet.text = "Language"
+        moveLabelIn()
     }
     
     @IBOutlet weak var fourthButtonOutlet: UIButton!
     @IBAction func fourthButtonAction(_ sender: UIButton) {
+        categoryLabelOutlet.text = "Sport"
+        moveLabelIn()
     }
     
     @IBOutlet weak var fifthButtonOutlet: UIButton!
     @IBAction func fifthButtonAction(_ sender: UIButton) {
+        categoryLabelOutlet.text = "Music"
+        moveLabelIn()
     }
     
     @IBOutlet weak var sixthButtonOutlet: UIButton!
     @IBAction func sixthButtonAction(_ sender: UIButton) {
+        categoryLabelOutlet.text = "Others"
+        moveLabelIn()
     }
     
     /*
