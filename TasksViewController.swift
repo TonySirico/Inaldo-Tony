@@ -9,19 +9,40 @@
 import UIKit
 
 class TasksViewController: UIViewController {
-
+    
+    @IBOutlet var Controller: UISegmentedControl!
+    
+    @IBOutlet var Label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+       
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
 
+    @IBAction func ChangeLbl(_ sender: UISegmentedControl)
+    {
+        
+        if Controller.selectedSegmentIndex == 0
+        {
+         
+        Label.text = "Hello World"
+            
+        }
+        if Controller.selectedSegmentIndex == 1
+        {
+        Label.text = "Hello Intersect"
+            
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 
