@@ -26,7 +26,6 @@
                                     <segment title="Seller"/>
                                 </segments>
                                 <connections>
-                                    <action selector="ChangeLbl:" destination="J3h-9j-a82" eventType="valueChanged" id="wGw-FG-dLJ"/>
                                     <action selector="Controller:" destination="J3h-9j-a82" eventType="valueChanged" id="XEt-wU-1I3"/>
                                 </connections>
                             </segmentedControl>
