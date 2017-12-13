@@ -18,15 +18,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9wF-St-89p">
-                                <rect key="frame" x="0.0" y="0.0" width="193" height="667"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="tableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="6" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2XP-Xy-QKh">
+                                <rect key="frame" x="0.0" y="600" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="IZq-kv-1jJ">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IZq-kv-1jJ" id="Jbf-vq-MhO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="yq4-Bb-Xb2" appends="YES" id="DBj-JZ-SIf"/>
+                                    <outletCollection property="gestureRecognizers" destination="fzI-ji-5Wp" appends="YES" id="j4P-Dw-aIA"/>
                                 </connections>
-                            </view>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLk-XA-oud">
                                 <rect key="frame" x="24" y="93" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -81,10 +92,10 @@
                                     <action selector="sixthButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="b0e-33-yjU"/>
                                 </connections>
                             </button>
-                            <searchBar contentMode="redraw" fixedFrame="YES" barStyle="black" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="ceq-aY-M8H">
+                            <searchBar contentMode="redraw" fixedFrame="YES" barStyle="black" searchBarStyle="minimal" placeholder="&quot;Name&quot; or &quot;#skill&quot;" translatesAutoresizingMaskIntoConstraints="NO" id="ceq-aY-M8H">
                                 <rect key="frame" x="0.0" y="26" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGF-Jf-dyU">
                                 <rect key="frame" x="0.0" y="26" width="334" height="56"/>
@@ -115,11 +126,6 @@
                                     <action selector="backButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="TEP-Za-OvH"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2XP-Xy-QKh">
-                                <rect key="frame" x="0.0" y="539" width="375" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -145,7 +151,6 @@
                         <outlet property="sixthButtonOutlet" destination="EBR-ft-tiS" id="gDH-D8-B1Z"/>
                         <outlet property="tableViewOutlet" destination="2XP-Xy-QKh" id="xyX-fl-ppf"/>
                         <outlet property="thirdButtonOutlet" destination="xf3-rp-MXZ" id="TW3-hz-VfK"/>
-                        <segue destination="wsi-V2-Prr" kind="show" id="D7V-e9-CL4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3e1-a9-fqs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -162,28 +167,14 @@
                         <action selector="tapAction:" destination="tle-9f-hMS" id="pgY-sY-PZp"/>
                     </connections>
                 </tapGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="yq4-Bb-Xb2">
+                <swipeGestureRecognizer direction="right" id="fzI-ji-5Wp">
                     <connections>
-                        <action selector="swipeAction:" destination="tle-9f-hMS" id="koX-0j-WIN"/>
+                        <action selector="swipeAction:" destination="tle-9f-hMS" id="0mi-fE-MSM"/>
+                        <outlet property="delegate" destination="2XP-Xy-QKh" id="vSR-zd-2Uc"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-791.20000000000005" y="821.73913043478262"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="0LP-8E-3Bh">
-            <objects>
-                <viewController id="wsi-V2-Prr" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yxH-2Y-Zxm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="MG1-VL-pXg"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GBp-hc-Wvs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="22" y="822"/>
         </scene>
     </scenes>
     <resources>

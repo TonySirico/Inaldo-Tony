@@ -27,60 +27,64 @@ class HomeViewController: UIViewController {
     }
     
     func moveButtonsOut() {
-        UIView.animate(withDuration: 0.3, animations: {self.firstButtonOutlet.center = CGPoint(x: -75, y:168)
+        UIView.animate(withDuration: 0.2, animations: {self.firstButtonOutlet.center = CGPoint(x: -75, y:168)
         })
-        UIView.animate(withDuration: 0.3, animations: {self.secondButtonOutlet.center = CGPoint(x: 450, y:168)
+        UIView.animate(withDuration: 0.2, animations: {self.secondButtonOutlet.center = CGPoint(x: 450, y:168)
         })
-        UIView.animate(withDuration: 0.3, animations: {self.thirdButtonOutlet.center = CGPoint(x: -75, y:343)
+        UIView.animate(withDuration: 0.2, animations: {self.thirdButtonOutlet.center = CGPoint(x: -75, y:343)
         })
-        UIView.animate(withDuration: 0.3, animations: {self.fourthButtonOutlet.center = CGPoint(x: 450, y:343)
+        UIView.animate(withDuration: 0.2, animations: {self.fourthButtonOutlet.center = CGPoint(x: 450, y:343)
         })
-        UIView.animate(withDuration: 0.3, animations: {self.fifthButtonOutlet.center = CGPoint(x: -75, y:518)
+        UIView.animate(withDuration: 0.2, animations: {self.fifthButtonOutlet.center = CGPoint(x: -75, y:518)
         })
-        UIView.animate(withDuration: 0.3, animations: {self.sixthButtonOutlet.center = CGPoint(x: 450, y:518)
+        UIView.animate(withDuration: 0.2, animations: {self.sixthButtonOutlet.center = CGPoint(x: 450, y:518)
+        })
+        UIView.animate(withDuration: 0.2, delay: 0.2, animations: {self.tableViewOutlet.frame.origin = CGPoint (x:0, y:87)
         })
     }
     
     func moveButtonsIn() {
-        UIView.animate(withDuration: 0.3, animations: {self.firstButtonOutlet.center = CGPoint(x: 99, y:168)
+        UIView.animate(withDuration: 0.2, delay:0.2, animations: {self.firstButtonOutlet.center = CGPoint(x: 99, y:168)
         })
-        UIView.animate(withDuration: 0.3, animations: {self.secondButtonOutlet.center = CGPoint(x: 276, y:168)
+        UIView.animate(withDuration: 0.2, delay:0.2, animations: {self.secondButtonOutlet.center = CGPoint(x: 276, y:168)
         })
-        UIView.animate(withDuration: 0.3, animations: {self.thirdButtonOutlet.center = CGPoint(x: 99, y:343)
+        UIView.animate(withDuration: 0.2, delay:0.2, animations: {self.thirdButtonOutlet.center = CGPoint(x: 99, y:343)
         })
-        UIView.animate(withDuration: 0.3, animations: {self.fourthButtonOutlet.center = CGPoint(x: 276, y:343)
+        UIView.animate(withDuration: 0.2, delay:0.2, animations: {self.fourthButtonOutlet.center = CGPoint(x: 276, y:343)
         })
-        UIView.animate(withDuration: 0.3, animations: {self.fifthButtonOutlet.center = CGPoint(x: 99, y:518)
+        UIView.animate(withDuration: 0.2, delay:0.2, animations: {self.fifthButtonOutlet.center = CGPoint(x: 99, y:518)
         })
-        UIView.animate(withDuration: 0.3, animations: {self.sixthButtonOutlet.center = CGPoint(x: 276, y:518)
+        UIView.animate(withDuration: 0.2, delay:0.2, animations: {self.sixthButtonOutlet.center = CGPoint(x: 276, y:518)
+        })
+        UIView.animate(withDuration: 0.2, animations: {self.tableViewOutlet.frame.origin = CGPoint (x:0, y:super.view.frame.height)
         })
     }
     
     func moveLabelIn() {
         moveButtonsOut()
-        UIView.animate(withDuration: 0.3, animations: {self.categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:50)
+        UIView.animate(withDuration: 0.2, animations: {self.categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:50)
         })
-        UIView.animate(withDuration: 0.3, animations: {self.searchBarOutlet.center = CGPoint(x: super.view.frame.width/2, y:-56)
+        UIView.animate(withDuration: 0.2, animations: {self.searchBarOutlet.center = CGPoint(x: super.view.frame.width/2, y:-56)
         })
-        UIView.animate(withDuration: 0.3, animations: {self.searchBarButtonOutlet.center = CGPoint(x: 167, y:-56)
+        UIView.animate(withDuration: 0.2, animations: {self.searchBarButtonOutlet.center = CGPoint(x: 167, y:-56)
         })
-        UIView.animate(withDuration: 0.3, animations: {self.searchBarCancelButtonAreaOutlet.center = CGPoint(x: 354.5, y:-56)
+        UIView.animate(withDuration: 0.2, animations: {self.searchBarCancelButtonAreaOutlet.center = CGPoint(x: 354.5, y:-56)
         })
-        UIView.animate(withDuration: 0.3, animations: {self.backButtonOutlet.center = CGPoint(x: 51, y:50)
+        UIView.animate(withDuration: 0.2, animations: {self.backButtonOutlet.center = CGPoint(x: 51, y:50)
         })
     }
     
     func moveLabelOut() {
         moveButtonsIn()
-        UIView.animate(withDuration: 0.3, animations: {self.categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:-20)
+        UIView.animate(withDuration: 0.2, delay: 0.2, animations: {self.categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:-20)
         })
-        UIView.animate(withDuration: 0.3, animations: {self.searchBarOutlet.center = CGPoint(x: super.view.frame.width/2, y:54)
+        UIView.animate(withDuration: 0.2, delay: 0.2, animations: {self.searchBarOutlet.center = CGPoint(x: super.view.frame.width/2, y:54)
         })
-        UIView.animate(withDuration: 0.3, animations: {self.searchBarButtonOutlet.center = CGPoint(x: 167, y:54)
+        UIView.animate(withDuration: 0.2, delay: 0.2, animations: {self.searchBarButtonOutlet.center = CGPoint(x: 167, y:54)
         })
-        UIView.animate(withDuration: 0.3, animations: {self.searchBarCancelButtonAreaOutlet.center = CGPoint(x: 354.5, y:54)
+        UIView.animate(withDuration: 0.2, delay: 0.2, animations: {self.searchBarCancelButtonAreaOutlet.center = CGPoint(x: 354.5, y:54)
         })
-        UIView.animate(withDuration: 0.3, animations: {self.backButtonOutlet.center = CGPoint(x: 51, y:-20)
+        UIView.animate(withDuration: 0.2, delay: 0.2, animations: {self.backButtonOutlet.center = CGPoint(x: 51, y:-20)
         })
     }
     
@@ -109,8 +113,13 @@ class HomeViewController: UIViewController {
         if searchBarOutlet.isFirstResponder {
             searchBarOutlet.text = ""
             searchBarOutlet.resignFirstResponder()
-            moveButtonsIn()
         }
+    }
+    
+    @IBAction func swipeAction (_ sender: UISwipeGestureRecognizer) {
+        searchBarOutlet.resignFirstResponder()
+        prepareButtonsForBack()
+        moveLabelOut()
     }
     
     @IBOutlet weak var searchBarButtonOutlet: UIButton!
@@ -126,14 +135,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var backButtonOutlet: UIButton!
     @IBAction func backButtonAction(_ sender: UIButton) {
         searchBarOutlet.resignFirstResponder()
-        moveLabelOut()
-    }
-    
-    @IBAction func swipeAction(_ sender: UISwipeGestureRecognizer) {
-        searchBarOutlet.resignFirstResponder()
-        if firstButtonOutlet.center != CGPoint(x:99, y:168) {
-            prepareButtonsForBack()
-        }
         moveLabelOut()
     }
     
