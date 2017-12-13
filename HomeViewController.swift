@@ -141,10 +141,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
     }
     
     @IBAction func tapAction(_ sender: UITapGestureRecognizer) {
-        if searchBarOutlet.isFirstResponder {
-            searchBarOutlet.text = ""
-            searchBarOutlet.resignFirstResponder()
-        }
+        searchBarOutlet.resignFirstResponder()
     }
     
     @IBAction func swipeAction (_ sender: UISwipeGestureRecognizer) {
@@ -189,7 +186,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var fourthButtonOutlet: UIButton!
     @IBAction func fourthButtonAction(_ sender: UIButton) {
         prepareBackButtonForCategories()
-        categoryLabelOutlet.text = "Sport"
+        categoryLabelOutlet.text = "Business"
         moveLabelIn()
     }
     

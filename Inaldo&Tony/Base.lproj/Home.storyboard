@@ -38,58 +38,49 @@
                                     <outletCollection property="gestureRecognizers" destination="fzI-ji-5Wp" appends="YES" id="j4P-Dw-aIA"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLk-XA-oud">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLk-XA-oud">
                                 <rect key="frame" x="24" y="93" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Coding"/>
+                                <state key="normal" title="Coding" image="Coding"/>
                                 <connections>
                                     <action selector="firstButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="xhp-fz-vHD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Med-UF-qtJ">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Med-UF-qtJ">
                                 <rect key="frame" x="201" y="93" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Design"/>
+                                <state key="normal" title="Design" image="Design"/>
                                 <connections>
                                     <action selector="secondButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="xxE-wv-Ddu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xf3-rp-MXZ">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xf3-rp-MXZ">
                                 <rect key="frame" x="24" y="268" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Language"/>
+                                <state key="normal" title="Language" image="Language"/>
                                 <connections>
                                     <action selector="thirdButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="cGh-mj-GRw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbJ-cD-15f">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbJ-cD-15f">
                                 <rect key="frame" x="201" y="268" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Sport"/>
+                                <state key="normal" title="Sport" image="Business"/>
                                 <connections>
                                     <action selector="fourthButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="LRt-8S-HCY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcN-Dr-0vv">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcN-Dr-0vv">
                                 <rect key="frame" x="24" y="443" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Music"/>
+                                <state key="normal" title="Music" image="Music"/>
                                 <connections>
                                     <action selector="fifthButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="ZzY-AZ-68o"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBR-ft-tiS">
-                                <rect key="frame" x="201" y="443" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Others"/>
-                                <connections>
-                                    <action selector="sixthButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="b0e-33-yjU"/>
                                 </connections>
                             </button>
                             <searchBar contentMode="center" fixedFrame="YES" barStyle="black" searchBarStyle="minimal" placeholder="&quot;Name&quot; or &quot;#skill&quot;" translatesAutoresizingMaskIntoConstraints="NO" id="ceq-aY-M8H">
@@ -108,15 +99,24 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ei-DP-VCQ">
-                                <rect key="frame" x="18" y="44" width="67" height="22"/>
+                                <rect key="frame" x="24" y="44" width="55" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="&lt;" image="Back"/>
+                                <state key="normal" image="Back"/>
                                 <connections>
                                     <action selector="backButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="TEP-Za-OvH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBR-ft-tiS">
+                                <rect key="frame" x="201" y="443" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Others" image="Others"/>
+                                <connections>
+                                    <action selector="sixthButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="b0e-33-yjU"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.086909105329949221" green="0.086909105329949221" blue="0.086909105329949221" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="uMT-WK-5UB"/>
                         <connections>
@@ -166,5 +166,11 @@
     </scenes>
     <resources>
         <image name="Back" width="55" height="22"/>
+        <image name="Business" width="150" height="150"/>
+        <image name="Coding" width="150" height="150"/>
+        <image name="Design" width="150" height="150"/>
+        <image name="Language" width="150" height="150"/>
+        <image name="Music" width="150" height="150"/>
+        <image name="Others" width="150" height="150"/>
     </resources>
 </document>
