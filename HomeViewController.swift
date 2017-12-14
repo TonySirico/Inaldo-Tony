@@ -81,6 +81,10 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
     
     func moveLabelIn() {
         moveButtonsOut()
+        let when = DispatchTime.now() + 0.3
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            self.SearchBarOutletTopContraint.constant = -56
+        }
         UIView.animate(withDuration: 0.3, animations: {self.categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:54)
         })
         UIView.animate(withDuration: 0.3, animations: {self.searchBarOutlet.center = CGPoint(x: super.view.frame.width/2, y:-56)
@@ -94,6 +98,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
         UIView.animate(withDuration: 0.3, delay: 0.3, animations: {self.categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:-20)
         })
         if isSearchBarShrinked == false {
+            SearchBarOutletTopContraint.constant = 26
             UIView.animate(withDuration: 0.3, delay:0.3, animations: {self.searchBarOutlet.center = CGPoint(x: super.view.frame.width/2, y:54)
             })
             UIView.animate(withDuration: 0.3, delay:0.3, animations: {
@@ -155,6 +160,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBarOutlet: UISearchBar!
     @IBOutlet weak var searchBarConstraint: NSLayoutConstraint!
+    @IBOutlet weak var SearchBarOutletTopContraint: NSLayoutConstraint!
     
     @IBOutlet weak var categoryLabelOutlet: UILabel!
     
