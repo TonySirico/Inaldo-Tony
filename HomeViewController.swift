@@ -16,7 +16,9 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y: -20)
+        super.view.backgroundColor = UIColor(red:0.07, green:0.07, blue:0.07, alpha:1.0)
+
+            categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:-20)
         
         backButtonOutlet.center = CGPoint(x: 47.5, y: -20)
         
@@ -55,7 +57,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
         })
         UIView.animate(withDuration: 0.3, animations: {self.sixthButtonOutlet.center = CGPoint(x: 450, y:518)
         })
-        UIView.animate(withDuration: 1, delay: 0.3, animations: {self.tableViewOutlet.frame.origin = CGPoint (x:0, y:87)
+        UIView.animate(withDuration: 0.5, delay: 0.3, animations: {self.tableViewOutlet.frame.origin = CGPoint (x:0, y:87)
         })
     }
     

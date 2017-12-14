@@ -214,10 +214,9 @@
         <scene sceneID="NO1-Yz-DKK">
             <objects>
                 <tabBarController id="xTY-qp-AJC" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7wo-Mj-Yze">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="7wo-Mj-Yze">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="NYD-vG-qKE" kind="relationship" relationship="viewControllers" id="9Jz-vG-bmU"/>
