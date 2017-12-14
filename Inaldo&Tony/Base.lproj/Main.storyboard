@@ -18,24 +18,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKk-v7-B1F">
-                                <rect key="frame" x="168" y="257" width="38" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKk-v7-B1F" customClass="RoundedButtonFilled" customModule="Inaldo_Tony" customModuleProvider="target">
+                                <rect key="frame" x="168" y="491" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <segue destination="xTY-qp-AJC" kind="show" id="bRN-Ff-gTI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7EQ-9Z-NW9">
-                                <rect key="frame" x="160" y="498" width="55" height="30"/>
+                                <rect key="frame" x="160" y="561" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign Up"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="0.47843137250000001" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="Dwx-Pk-NBg" kind="show" id="APZ-zf-gq1"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dummyProfilePic" translatesAutoresizingMaskIntoConstraints="NO" id="9lV-ZF-5on" customClass="RoundImageView" customModule="Inaldo_Tony" customModuleProvider="target">
+                                <rect key="frame" x="87" y="103" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M1P-mt-WkX" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                                <rect key="frame" x="62" y="370" width="250" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1mP-g5-GrC" customClass="RoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                                <rect key="frame" x="62" y="408" width="250" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="LDE-J0-tRY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="05W-gz-urK"/>
@@ -56,7 +77,7 @@
                                 <rect key="frame" x="0.0" y="16" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="WSi-Cb-AAG"/>
+                                    <navigationItem title="Sign Up" id="WSi-Cb-AAG"/>
                                 </items>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3Z-AG-pHy">
@@ -127,40 +148,49 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKH-hg-PF0" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="56" y="600" width="46" height="30"/>
+                                                <rect key="frame" x="56" y="585" width="46" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekW-KP-1BH" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="150" y="600" width="46" height="30"/>
+                                                <rect key="frame" x="150" y="585" width="46" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBc-UH-Gbw" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="265" y="600" width="46" height="30"/>
+                                                <rect key="frame" x="265" y="585" width="46" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0U-0V-rSp" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="56" y="648" width="46" height="30"/>
+                                                <rect key="frame" x="56" y="633" width="46" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGR-8f-8dI" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="150" y="648" width="46" height="30"/>
+                                                <rect key="frame" x="150" y="633" width="46" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88D-6i-cdG" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="259" y="648" width="46" height="30"/>
+                                                <rect key="frame" x="259" y="633" width="46" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jn6-21-Um5" customClass="AlternativeRoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="705" width="359" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Jn6-21-Um5" secondAttribute="trailing" constant="8" id="Hiu-74-iHt"/>
                                             <constraint firstAttribute="height" constant="1000" id="Jaj-Mp-W1U"/>
+                                            <constraint firstItem="Jn6-21-Um5" firstAttribute="leading" secondItem="d9c-iM-3Nf" secondAttribute="leading" constant="8" id="Sfo-Jr-7op"/>
+                                            <constraint firstAttribute="bottom" secondItem="Jn6-21-Um5" secondAttribute="bottom" constant="171" id="Tip-QX-cl5"/>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="oGa-au-ZJx" appends="YES" id="QLu-Jo-2JM"/>
@@ -191,6 +221,7 @@
                         <outlet property="businessButton" destination="YBc-UH-Gbw" id="Xg4-uF-qes"/>
                         <outlet property="codingButton" destination="pKH-hg-PF0" id="lgx-OW-JGC"/>
                         <outlet property="datePicker" destination="cAx-gN-mBm" id="Fr9-bg-ySk"/>
+                        <outlet property="descriptionTextField" destination="Jn6-21-Um5" id="M7g-zG-b6h"/>
                         <outlet property="designButton" destination="ekW-KP-1BH" id="ohf-5b-r3g"/>
                         <outlet property="emailTextField" destination="7mn-lw-daE" id="ydD-b0-RoA"/>
                         <outlet property="languageButton" destination="G0U-0V-rSp" id="GSK-cI-KAH"/>

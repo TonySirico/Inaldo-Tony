@@ -12,6 +12,8 @@
 		0057E3F91FDEA0A2005F68D7 /* Tasks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0057E3F71FDEA0A2005F68D7 /* Tasks.storyboard */; };
 		0057E3FB1FDEA0B3005F68D7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0057E3FA1FDEA0B3005F68D7 /* Profile.storyboard */; };
 		0057E3FD1FDEA0FB005F68D7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057E3FC1FDEA0FB005F68D7 /* HomeViewController.swift */; };
+		0A0167731FE29FBA00E4A57B /* RoundButtonFilled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0167721FE29FBA00E4A57B /* RoundButtonFilled.swift */; };
+		0A0167751FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0167741FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift */; };
 		0AA2288C1FE27069000D1254 /* RoundedUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA2288B1FE27069000D1254 /* RoundedUITextField.swift */; };
 		0ABAE99E1FE186770022E7F5 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAE99D1FE186770022E7F5 /* RoundButton.swift */; };
 		0ACC02A51FE122C0003774B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC02A41FE122C0003774B1 /* LoginViewController.swift */; };
@@ -53,6 +55,8 @@
 		0057E3F81FDEA0A2005F68D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Inaldo&Tony/Base.lproj/Tasks.storyboard"; sourceTree = "<group>"; };
 		0057E3FA1FDEA0B3005F68D7 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		0057E3FC1FDEA0FB005F68D7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0A0167721FE29FBA00E4A57B /* RoundButtonFilled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButtonFilled.swift; sourceTree = "<group>"; };
+		0A0167741FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlternativeRoundedUITextField.swift; sourceTree = "<group>"; };
 		0AA2288B1FE27069000D1254 /* RoundedUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUITextField.swift; sourceTree = "<group>"; };
 		0ABAE99D1FE186770022E7F5 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		0ACC02A41FE122C0003774B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +119,9 @@
 				0057E3FC1FDEA0FB005F68D7 /* HomeViewController.swift */,
 				0ACC02AA1FE14279003774B1 /* RoundImageView.swift */,
 				0ABAE99D1FE186770022E7F5 /* RoundButton.swift */,
+				0A0167721FE29FBA00E4A57B /* RoundButtonFilled.swift */,
 				0AA2288B1FE27069000D1254 /* RoundedUITextField.swift */,
+				0A0167741FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift */,
 				32E80C391FDE943F0006EF76 /* Inaldo&Tony */,
 				32E80C4E1FDE943F0006EF76 /* Inaldo&TonyTests */,
 				32E80C591FDE943F0006EF76 /* Inaldo&TonyUITests */,
@@ -314,9 +320,11 @@
 				32E80C3B1FDE943F0006EF76 /* AppDelegate.swift in Sources */,
 				0ACC02AB1FE14279003774B1 /* RoundImageView.swift in Sources */,
 				324910C81FDEA1C7004FF991 /* TasksViewController.swift in Sources */,
+				0A0167751FE2A10A00E4A57B /* AlternativeRoundedUITextField.swift in Sources */,
 				324910C61FDEA1B8004FF991 /* RequestsViewController.swift in Sources */,
 				0057E3FD1FDEA0FB005F68D7 /* HomeViewController.swift in Sources */,
 				0ACC02A91FE12EE6003774B1 /* CustomTextField.swift in Sources */,
+				0A0167731FE29FBA00E4A57B /* RoundButtonFilled.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
