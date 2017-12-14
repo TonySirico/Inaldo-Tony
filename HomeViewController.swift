@@ -9,16 +9,23 @@
 
 import UIKit
 
-var isSearchBarShrinked = false
-
 class HomeViewController: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if StoredData.shared.searchBarIsShrinked == true {
+            searchBarConstraint.constant = 85
+        }
+        
+        if StoredData.shared.categoryLabelIsOut == false {
+            searchBarTopContraint.constant = -20
+            searchBarOutlet.center = CGPoint(x: super.view.frame.width/2, y:-56)
+        }
+        
         super.view.backgroundColor = UIColor(red:0.07, green:0.07, blue:0.07, alpha:1.0)
 
-            categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:-20)
+        categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:-20)
         
         backButtonOutlet.center = CGPoint(x: 47.5, y: -20)
         
@@ -87,13 +94,14 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
         })
         UIView.animate(withDuration: 0.3, animations: {self.backButtonOutlet.center = CGPoint(x: 47.5, y:54)
         })
+        StoredData.shared.categoryLabelIsOut = false
     }
     
     func moveLabelOut() {
         moveButtonsIn()
         UIView.animate(withDuration: 0.3, delay: 0.3, animations: {self.categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:-20)
         })
-        if isSearchBarShrinked == false {
+        if StoredData.shared.searchBarIsShrinked == false {
             UIView.animate(withDuration: 0.3, delay:0.3, animations: {self.searchBarOutlet.center = CGPoint(x: super.view.frame.width/2, y:54)
             })
             UIView.animate(withDuration: 0.3, delay:0.3, animations: {
@@ -110,7 +118,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
             })
         }
         searchBarOutlet.text = ""
-        isSearchBarShrinked = false
+        StoredData.shared.searchBarIsShrinked = false
+        StoredData.shared.categoryLabelIsOut = true
     }
     
     func prepareButtonsForBack() {
@@ -135,12 +144,12 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
             self.searchBarConstraint.constant = 85
             self.view.layoutIfNeeded()
         })
-        if isSearchBarShrinked == false {
+        if StoredData.shared.searchBarIsShrinked == false {
             prepareBackButtonForSearchBar()
             UIView.animate(withDuration: 0.3, animations: {self.backButtonOutlet.center = CGPoint(x: 47.5, y:54)
             })
         }
-        isSearchBarShrinked = true
+        StoredData.shared.searchBarIsShrinked = true
     }
     
     @IBAction func tapAction(_ sender: UITapGestureRecognizer) {
@@ -155,6 +164,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBarOutlet: UISearchBar!
     @IBOutlet weak var searchBarConstraint: NSLayoutConstraint!
+    @IBOutlet weak var searchBarTopContraint: NSLayoutConstraint!
     
     @IBOutlet weak var categoryLabelOutlet: UILabel!
     
