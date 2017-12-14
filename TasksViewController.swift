@@ -8,33 +8,42 @@
 
 import UIKit
 
+class TasksTableViewCell: UITableViewCell
+{
+    @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var labelSkill: UILabel!
+    @IBOutlet weak var labelSurname: UILabel!
+    @IBOutlet weak var labelTimeRemaining: UILabel!
+    @IBOutlet weak var labelTimeRequested: UILabel!
+    
+    @IBOutlet weak var labelNameSecond: UILabel!
+    @IBOutlet weak var labelSkillSecond: UILabel!
+    @IBOutlet weak var labelSurnameSecond: UILabel!
+    @IBOutlet weak var labelTimeRequestedSecond: UILabel!
+    @IBOutlet weak var labelTimeRemainingSecond: UILabel!
+}
+
 class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var Controller: UISegmentedControl!
     @IBOutlet weak var TableView: UITableView!
     @IBOutlet weak var SecondTableView: UITableView!
+
+
+    var names = ["ilaria", "inaldo", "tony", "natalia", "pedro", "perna"]
+    var surnames = ["silva", "antonio", "toschi", "salti", "pereira", "oliveira"]
+    var skill = ["coding", "desing", "currency", "languages", "others", "drums"]
+    var timeRemaining = ["50 M", "20 M", "23 M", "34 M", "45 M", "67 M"]
+    var timeRequested = ["12 M", "23 M", "23 M", "34 M", "45 M", "54 M"]
     
-    struct PreviewDetail
-    {
-        let title: String
-        let preferredHeight: Double
-    }
+    var namesSegmented = ["lucia", "bel", "sol", "rangel", "kameni", "taqita"]
+    var surnamesSegmented = ["silvao", "perkiasi", "lete", "robatini", "olsen", "ramos"]
+    var skillSegmented = ["fishing", "UE", "UI", "economY", "cars", "guitars"]
+    var timeRemainingSegmented = ["23 M", "34 M", "57 M", "45 M", "38 M", "93 M"]
+    var timeRequestedSegmented = ["28 M", "45 M", "45 M", "39 M", "15 M", "64 M"]
+
     
-    let sampleData =
-    [
-        PreviewDetail(title: "Small", preferredHeight: 160.0),
-        PreviewDetail(title: "Medium", preferredHeight: 320.0),
-        PreviewDetail(title: "Large", preferredHeight: 0.0) // 0.0 to get the default height.
-    ]
-    
-    let sampleData1 =
-     
-    [
-        PreviewDetail(title: "Small 2", preferredHeight: 160.0),
-        PreviewDetail(title: "Medium 2", preferredHeight: 320.0),
-        PreviewDetail(title: "Large 2", preferredHeight: 0.0) // 0.0 to get the default height.
-    ]
-    
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -50,61 +59,128 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        var count:Int?
+        var count = 0
         
-        if tableView == self.TableView
+        switch(Controller.selectedSegmentIndex)
         {
-            count = sampleData.count
+        case 0:
+            if tableView == self.TableView
+            {
+                count = names.count
+            }
+            
+            if tableView == self.SecondTableView
+            {
+                count = names.count
+            }
+            break
+        
+        case 1:
+            if tableView == self.TableView
+            {
+                count = names.count
+            }
+            
+            if tableView == self.SecondTableView
+            {
+                count = names.count
+            }
+            break
+            
+        default:
+            break
         }
         
-        if tableView == self.SecondTableView
-        {
-            count = sampleData1.count
-        }
-        
-        return count!
+        return count
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         
-        var cell: UITableViewCell?
+        var cell: TasksTableViewCell?
         
-        if tableView == self.TableView
+        switch(Controller.selectedSegmentIndex)
         {
-            cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath)
-            let previewDetail = sampleData[indexPath.row]
-            cell!.textLabel!.text = previewDetail.title
+            
+        case 0:
+            if tableView == self.TableView
+            {
+                cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath) as? TasksTableViewCell
+                let nameLabel = names[indexPath.row]
+                let surnameLabel = surnames[indexPath.row]
+                let skillLabel = skill[indexPath.row]
+                let timeRemainingLabel = timeRemaining[indexPath.row]
+                let timeRequestedLabel = timeRequested[indexPath.row]
+                
+                cell!.labelName!.text = nameLabel
+                cell!.labelSurname!.text = surnameLabel
+                cell!.labelSkill!.text = skillLabel
+                cell!.labelTimeRemaining!.text = timeRemainingLabel
+                cell!.labelTimeRequested!.text = timeRequestedLabel
+            }
+            
+            if tableView == self.SecondTableView
+            {
+                cell = tableView.dequeueReusableCell(withIdentifier: "secondCell", for: indexPath) as? TasksTableViewCell
+                let nameLabel = names[indexPath.row]
+                let surnameLabel = surnames[indexPath.row]
+                let skillLabel = skill[indexPath.row]
+                let timeRemainingLabel = timeRemaining[indexPath.row]
+                let timeRequestedLabel = timeRequested[indexPath.row]
+                
+                cell!.labelNameSecond.text = nameLabel
+                cell!.labelSurnameSecond.text = surnameLabel
+                cell!.labelSkillSecond.text = skillLabel
+                cell!.labelTimeRemainingSecond.text = timeRemainingLabel
+                cell!.labelTimeRequestedSecond.text = timeRequestedLabel
+            }
+            break
+            
+        case 1:
+            if tableView == self.TableView
+            {
+                cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath) as? TasksTableViewCell
+                let nameLabel = namesSegmented[indexPath.row]
+                let surnameLabel = surnamesSegmented[indexPath.row]
+                let skillLabel = skillSegmented[indexPath.row]
+                let timeRemainingLabel = timeRemainingSegmented[indexPath.row]
+                let timeRequestedLabel = timeRequestedSegmented[indexPath.row]
+                
+                cell!.labelName!.text = nameLabel
+                cell!.labelSurname!.text = surnameLabel
+                cell!.labelSkill!.text = skillLabel
+                cell!.labelTimeRemaining!.text = timeRemainingLabel
+                cell!.labelTimeRequested!.text = timeRequestedLabel
+            }
+            
+            if tableView == self.SecondTableView
+            {
+                cell = tableView.dequeueReusableCell(withIdentifier: "secondCell", for: indexPath) as? TasksTableViewCell
+                let nameLabel = namesSegmented[indexPath.row]
+                let surnameLabel = surnamesSegmented[indexPath.row]
+                let skillLabel = skillSegmented[indexPath.row]
+                let timeRemainingLabel = timeRemainingSegmented[indexPath.row]
+                let timeRequestedLabel = timeRequestedSegmented[indexPath.row]
+                
+                cell!.labelNameSecond.text = nameLabel
+                cell!.labelSurnameSecond.text = surnameLabel
+                cell!.labelSkillSecond.text = skillLabel
+                cell!.labelTimeRemainingSecond.text = timeRemainingLabel
+                cell!.labelTimeRequestedSecond.text = timeRequestedLabel
+            }
+            break
+        
+        default:
+            break
         }
-        
-        if tableView == self.SecondTableView
-        {
-            cell = tableView.dequeueReusableCell(withIdentifier: "secondCell", for: indexPath)
-            let previewDetail = sampleData1[indexPath.row]
-            cell!.textLabel!.text = previewDetail.title
-        }
-        
-        
         return cell!
-        
     }
     
     @IBAction func Controller(_ sender: UISegmentedControl)
     {
-        
-        if Controller.selectedSegmentIndex == 0
-        {
-            
-//            Label.text = "Hello World"
-            
-        }
-        if Controller.selectedSegmentIndex == 1
-        {
-//            Label.text = "Hello Intersect"
-            
-        }
-        
+        TableView.reloadData()
+        SecondTableView.reloadData()
     }
 
 }
