@@ -9,14 +9,33 @@
 import UIKit
 
 class SignupViewController: UIViewController {
+    
+    //vars
+    var coding = ""
+    var design = ""
+    var business = ""
+    var language = ""
+    var science = ""
+    var other = ""
 
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var surnameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var badgeTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    //outlets
+    @IBOutlet weak var nameTextField: RoundedUITextField!
+    @IBOutlet weak var surnameTextField: RoundedUITextField!
+    @IBOutlet weak var emailTextField: RoundedUITextField!
+    @IBOutlet weak var badgeTextField: RoundedUITextField!
+    @IBOutlet weak var passwordTextField: RoundedUITextField!
     
     @IBOutlet weak var datePicker: UIDatePicker!
+    
+    
+    @IBOutlet weak var codingButton: RoundedButton!
+    @IBOutlet weak var designButton: RoundedButton!
+    @IBOutlet weak var businessButton: RoundedButton!
+    @IBOutlet weak var languageButton: RoundedButton!
+    @IBOutlet weak var scienceButton: RoundedButton!
+    @IBOutlet weak var otherButton: RoundedButton!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,34 +43,7 @@ class SignupViewController: UIViewController {
         //picker
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")
         
-        
-        
-        //editing the text field
-        nameTextField.attributedPlaceholder = NSAttributedString(string: "Name", attributes: [NSAttributedStringKey.foregroundColor: UIColor(red:0.56, green:0.56, blue:0.58, alpha:1.0)])
-        nameTextField.backgroundColor = UIColor(red:0.07, green:0.07, blue:0.07, alpha:1.0)
-        nameTextField.tintColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
-        nameTextField.textColor = UIColor.white
-        
-        surnameTextField.attributedPlaceholder = NSAttributedString(string: "Surname", attributes: [NSAttributedStringKey.foregroundColor: UIColor(red:0.56, green:0.56, blue:0.58, alpha:1.0)])
-        surnameTextField.backgroundColor = UIColor(red:0.07, green:0.07, blue:0.07, alpha:1.0)
-        surnameTextField.tintColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
-        surnameTextField.textColor = UIColor.white
-        
-        emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedStringKey.foregroundColor: UIColor(red:0.56, green:0.56, blue:0.58, alpha:1.0)])
-        emailTextField.backgroundColor = UIColor(red:0.07, green:0.07, blue:0.07, alpha:1.0)
-        emailTextField.tintColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
-        emailTextField.textColor = UIColor.white
-        
-        badgeTextField.attributedPlaceholder = NSAttributedString(string: "Badge Number", attributes: [NSAttributedStringKey.foregroundColor: UIColor(red:0.56, green:0.56, blue:0.58, alpha:1.0)])
-        badgeTextField.backgroundColor = UIColor(red:0.07, green:0.07, blue:0.07, alpha:1.0)
-        badgeTextField.tintColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
-        badgeTextField.textColor = UIColor.white
-        
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedStringKey.foregroundColor: UIColor(red:0.56, green:0.56, blue:0.58, alpha:1.0)])
-        passwordTextField.backgroundColor = UIColor(red:0.07, green:0.07, blue:0.07, alpha:1.0)
-        passwordTextField.tintColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
-        passwordTextField.textColor = UIColor.white
-        
+        //Edit the placeholder into the main storyboard
         
     }
 
@@ -66,6 +58,9 @@ class SignupViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
     }
 
+    
+    
+    
     /*
     // MARK: - Navigation
 
@@ -75,5 +70,46 @@ class SignupViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    /*
+     class SecondViewController: UIViewController {
+     
+     @IBOutlet weak var textField: UITextField!
+     @IBAction func swipeDown(_ sender: Any) {
+     Write.shared.writing = textField.text!
+     self.dismiss(animated: true, completion: nil)
+     }
+     override func viewDidLoad() {
+     super.viewDidLoad()
+     
+     // Do any additional setup after loading the view.
+     }
+     
+     override func didReceiveMemoryWarning() {
+     super.didReceiveMemoryWarning()
+     // Dispose of any resources that can be recreated.
+     }
+     
+     
+     
+     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+     self.view.endEditing(true)
+     }
+     
+     
+     
+     /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+     
+     }
+     */
 
 }
