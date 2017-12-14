@@ -12,6 +12,12 @@
 		0057E3F91FDEA0A2005F68D7 /* Tasks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0057E3F71FDEA0A2005F68D7 /* Tasks.storyboard */; };
 		0057E3FB1FDEA0B3005F68D7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0057E3FA1FDEA0B3005F68D7 /* Profile.storyboard */; };
 		0057E3FD1FDEA0FB005F68D7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057E3FC1FDEA0FB005F68D7 /* HomeViewController.swift */; };
+		0AA2288C1FE27069000D1254 /* RoundedUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA2288B1FE27069000D1254 /* RoundedUITextField.swift */; };
+		0ABAE99E1FE186770022E7F5 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABAE99D1FE186770022E7F5 /* RoundButton.swift */; };
+		0ACC02A51FE122C0003774B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC02A41FE122C0003774B1 /* LoginViewController.swift */; };
+		0ACC02A71FE1235F003774B1 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC02A61FE1235F003774B1 /* SignupViewController.swift */; };
+		0ACC02A91FE12EE6003774B1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC02A81FE12EE6003774B1 /* CustomTextField.swift */; };
+		0ACC02AB1FE14279003774B1 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC02AA1FE14279003774B1 /* RoundImageView.swift */; };
 		324910C61FDEA1B8004FF991 /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324910C51FDEA1B8004FF991 /* RequestsViewController.swift */; };
 		324910C81FDEA1C7004FF991 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324910C71FDEA1C7004FF991 /* TasksViewController.swift */; };
 		324910CA1FDEA1D9004FF991 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324910C91FDEA1D9004FF991 /* ProfileViewController.swift */; };
@@ -47,6 +53,12 @@
 		0057E3F81FDEA0A2005F68D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Inaldo&Tony/Base.lproj/Tasks.storyboard"; sourceTree = "<group>"; };
 		0057E3FA1FDEA0B3005F68D7 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		0057E3FC1FDEA0FB005F68D7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0AA2288B1FE27069000D1254 /* RoundedUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUITextField.swift; sourceTree = "<group>"; };
+		0ABAE99D1FE186770022E7F5 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		0ACC02A41FE122C0003774B1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0ACC02A61FE1235F003774B1 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		0ACC02A81FE12EE6003774B1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		0ACC02AA1FE14279003774B1 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		324910C51FDEA1B8004FF991 /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		324910C71FDEA1C7004FF991 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		324910C91FDEA1D9004FF991 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +113,9 @@
 				324910C51FDEA1B8004FF991 /* RequestsViewController.swift */,
 				0057E3F21FDEA03A005F68D7 /* Home.storyboard */,
 				0057E3FC1FDEA0FB005F68D7 /* HomeViewController.swift */,
+				0ACC02AA1FE14279003774B1 /* RoundImageView.swift */,
+				0ABAE99D1FE186770022E7F5 /* RoundButton.swift */,
+				0AA2288B1FE27069000D1254 /* RoundedUITextField.swift */,
 				32E80C391FDE943F0006EF76 /* Inaldo&Tony */,
 				32E80C4E1FDE943F0006EF76 /* Inaldo&TonyTests */,
 				32E80C591FDE943F0006EF76 /* Inaldo&TonyUITests */,
@@ -124,6 +139,9 @@
 				32E80C3A1FDE943F0006EF76 /* AppDelegate.swift */,
 				32E80C3C1FDE943F0006EF76 /* ViewController.swift */,
 				32E80C3E1FDE943F0006EF76 /* Main.storyboard */,
+				0ACC02A81FE12EE6003774B1 /* CustomTextField.swift */,
+				0ACC02A61FE1235F003774B1 /* SignupViewController.swift */,
+				0ACC02A41FE122C0003774B1 /* LoginViewController.swift */,
 				32E80C411FDE943F0006EF76 /* Assets.xcassets */,
 				32E80C431FDE943F0006EF76 /* LaunchScreen.storyboard */,
 				32E80C461FDE943F0006EF76 /* Info.plist */,
@@ -287,12 +305,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ACC02A51FE122C0003774B1 /* LoginViewController.swift in Sources */,
 				324910CA1FDEA1D9004FF991 /* ProfileViewController.swift in Sources */,
+				0ACC02A71FE1235F003774B1 /* SignupViewController.swift in Sources */,
+				0AA2288C1FE27069000D1254 /* RoundedUITextField.swift in Sources */,
 				32E80C3D1FDE943F0006EF76 /* ViewController.swift in Sources */,
+				0ABAE99E1FE186770022E7F5 /* RoundButton.swift in Sources */,
 				32E80C3B1FDE943F0006EF76 /* AppDelegate.swift in Sources */,
+				0ACC02AB1FE14279003774B1 /* RoundImageView.swift in Sources */,
 				324910C81FDEA1C7004FF991 /* TasksViewController.swift in Sources */,
 				324910C61FDEA1B8004FF991 /* RequestsViewController.swift in Sources */,
 				0057E3FD1FDEA0FB005F68D7 /* HomeViewController.swift in Sources */,
+				0ACC02A91FE12EE6003774B1 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,10 +499,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 54MA3YJVS2;
+				DEVELOPMENT_TEAM = X8PFEAAF6X;
 				INFOPLIST_FILE = "Inaldo&Tony/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.antoniosirica.manhattanchallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.antoniosirica.manhattanchallenge-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -490,10 +514,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 54MA3YJVS2;
+				DEVELOPMENT_TEAM = X8PFEAAF6X;
 				INFOPLIST_FILE = "Inaldo&Tony/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.antoniosirica.manhattanchallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.antoniosirica.manhattanchallenge-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
