@@ -30,17 +30,17 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var SecondTableView: UITableView!
 
 
-    var names = ["ilaria", "inaldo", "tony", "natalia", "pedro", "perna"]
-    var surnames = ["silva", "antonio", "toschi", "salti", "pereira", "oliveira"]
-    var skill = ["coding", "desing", "currency", "languages", "others", "drums"]
-    var timeRemaining = ["50 M", "20 M", "23 M", "34 M", "45 M", "67 M"]
-    var timeRequested = ["12 M", "23 M", "23 M", "34 M", "45 M", "54 M"]
+    var names = ["Cecilia", "Pasquale", "Astrogildo", "Natalia", "Lis", "Perna"]
+    var surnames = ["Silva Ribeiro", "Antonio Ramos Ribeiro", "Toschi Magalhes", "Salti", "Pereira Rios", "Oliveira da Silva Sauro"]
+    var skill = ["Coding", "Desing", "Economy", "Languages", "Others", "Musical Instruments"]
+    var timeRemaining = ["50", "90", "130", "100", "11", "3"]
+    var timeRequested = ["12", "7", "100", "800", "47", "99"]
     
-    var namesSegmented = ["lucia", "bel", "sol", "rangel", "kameni", "taqita"]
-    var surnamesSegmented = ["silvao", "perkiasi", "lete", "robatini", "olsen", "ramos"]
-    var skillSegmented = ["fishing", "UE", "UI", "economY", "cars", "guitars"]
-    var timeRemainingSegmented = ["23 M", "34 M", "57 M", "45 M", "38 M", "93 M"]
-    var timeRequestedSegmented = ["28 M", "45 M", "45 M", "39 M", "15 M", "64 M"]
+    var namesSegmented = ["Lucia Vania", "Isabel Pereira", "Sol", "Danilo", "Kameni", "Taita"]
+    var surnamesSegmented = ["Silvao", "Perkiasi Silva Saurao", "Lete de Vinci", "Robatini Perske", "Olsen", "Ramos"]
+    var skillSegmented = ["EUA", "Hiking", "User Interface", "User Experience", "Music", "Crafting"]
+    var timeRemainingSegmented = ["23", "900", "900", "5", "38", "11"]
+    var timeRequestedSegmented = ["288", "500", "100", "39", "0", "10"]
 
     
 
