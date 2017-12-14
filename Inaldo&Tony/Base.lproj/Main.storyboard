@@ -210,11 +210,11 @@
             </objects>
             <point key="canvasLocation" x="-2770.4000000000001" y="1190.1049475262371"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main View Controller-->
         <scene sceneID="NO1-Yz-DKK">
             <objects>
-                <tabBarController id="xTY-qp-AJC" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="7wo-Mj-Yze">
+                <tabBarController id="xTY-qp-AJC" customClass="MainViewController" customModule="Inaldo_Tony" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" restorationIdentifier="tabBar" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="7wo-Mj-Yze">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </tabBar>

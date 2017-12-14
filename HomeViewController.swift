@@ -9,22 +9,13 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UISearchBarDelegate {
+class HomeViewController: UIViewController, UISearchBarDelegate, UITabBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if StoredData.shared.searchBarIsShrinked == true {
-            searchBarConstraint.constant = 85
-        }
-        
-        if StoredData.shared.categoryLabelIsOut == false {
-            searchBarTopContraint.constant = -20
-            searchBarOutlet.center = CGPoint(x: super.view.frame.width/2, y:-56)
-        }
-        
         super.view.backgroundColor = UIColor(red:0.07, green:0.07, blue:0.07, alpha:1.0)
-
+        
         categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:-20)
         
         backButtonOutlet.center = CGPoint(x: 47.5, y: -20)
@@ -39,6 +30,19 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if item.tag == 1 {
+            if StoredData.shared.searchBarIsShrinked == true {
+                searchBarConstraint.constant = 85
+            }
+            
+            if StoredData.shared.categoryLabelIsOut == false {
+                searchBarTopContraint.constant = -52
+                searchBarOutlet.center = CGPoint(x: super.view.frame.width/2, y:-56)
+            }
+        }
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {

@@ -65,9 +65,6 @@
                             </button>
                             <searchBar contentMode="center" searchBarStyle="minimal" placeholder="&quot;Name&quot; or &quot;#skill&quot;" translatesAutoresizingMaskIntoConstraints="NO" id="ceq-aY-M8H">
                                 <rect key="frame" x="0.0" y="26" width="375" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="tu2-g0-Qhs"/>
-                                </constraints>
                                 <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="tle-9f-hMS" id="ffI-4U-H8p"/>
