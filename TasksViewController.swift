@@ -116,8 +116,8 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 cell!.labelName!.text = nameLabel
                 cell!.labelSurname!.text = surnameLabel
                 cell!.labelSkill!.text = skillLabel
-                cell!.labelTimeRemaining!.text = timeRemainingLabel
-                cell!.labelTimeRequested!.text = timeRequestedLabel
+                cell!.labelTimeRemaining!.text = timeRemainingLabel + " min"
+                cell!.labelTimeRequested!.text = "(" + timeRequestedLabel + " minutes)"
             }
             
             if tableView == self.SecondTableView
@@ -132,8 +132,8 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 cell!.labelNameSecond.text = nameLabel
                 cell!.labelSurnameSecond.text = surnameLabel
                 cell!.labelSkillSecond.text = skillLabel
-                cell!.labelTimeRemainingSecond.text = timeRemainingLabel
-                cell!.labelTimeRequestedSecond.text = timeRequestedLabel
+                cell!.labelTimeRemainingSecond.text = timeRemainingLabel + " min"
+                cell!.labelTimeRequestedSecond.text = "(" + timeRequestedLabel + " minutes)"
             }
             break
             
@@ -150,8 +150,8 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 cell!.labelName!.text = nameLabel
                 cell!.labelSurname!.text = surnameLabel
                 cell!.labelSkill!.text = skillLabel
-                cell!.labelTimeRemaining!.text = timeRemainingLabel
-                cell!.labelTimeRequested!.text = timeRequestedLabel
+                cell!.labelTimeRemaining!.text = timeRemainingLabel + " min"
+                cell!.labelTimeRequested!.text = "(" + timeRequestedLabel + " minutes)"
             }
             
             if tableView == self.SecondTableView
@@ -166,8 +166,8 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 cell!.labelNameSecond.text = nameLabel
                 cell!.labelSurnameSecond.text = surnameLabel
                 cell!.labelSkillSecond.text = skillLabel
-                cell!.labelTimeRemainingSecond.text = timeRemainingLabel
-                cell!.labelTimeRequestedSecond.text = timeRequestedLabel
+                cell!.labelTimeRemainingSecond.text = timeRemainingLabel + " min"
+                cell!.labelTimeRequestedSecond.text = "(" + timeRequestedLabel + " minutes)"
             }
             break
         
