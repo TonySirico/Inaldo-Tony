@@ -18,6 +18,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="tableView" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="6" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2XP-Xy-QKh">
+                                <rect key="frame" x="0.0" y="600" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <gestureRecognizers/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="IZq-kv-1jJ">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IZq-kv-1jJ" id="Jbf-vq-MhO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fzI-ji-5Wp" appends="YES" id="j4P-Dw-aIA"/>
+                                </connections>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLk-XA-oud">
                                 <rect key="frame" x="24" y="93" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -94,32 +114,12 @@
                                     <action selector="sixthButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="b0e-33-yjU"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="tableView" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="6" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2XP-Xy-QKh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                <gestureRecognizers/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="IZq-kv-1jJ">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IZq-kv-1jJ" id="Jbf-vq-MhO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <sections/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="fzI-ji-5Wp" appends="YES" id="j4P-Dw-aIA"/>
-                                </connections>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="ceq-aY-M8H" firstAttribute="top" secondItem="Kez-qp-7nR" secondAttribute="top" constant="26" id="OKA-cu-q7P"/>
                             <constraint firstItem="ceq-aY-M8H" firstAttribute="leading" secondItem="uMT-WK-5UB" secondAttribute="leading" id="fLQ-CO-Akb"/>
+                            <constraint firstItem="ceq-aY-M8H" firstAttribute="top" secondItem="Kez-qp-7nR" secondAttribute="top" constant="26" id="w0Z-xQ-Kat"/>
                             <constraint firstItem="ceq-aY-M8H" firstAttribute="trailing" secondItem="uMT-WK-5UB" secondAttribute="trailing" id="y2U-fw-Apt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uMT-WK-5UB"/>
@@ -138,7 +138,6 @@
                         <outlet property="fourthButtonOutlet" destination="pbJ-cD-15f" id="fai-6b-uUB"/>
                         <outlet property="searchBarConstraint" destination="fLQ-CO-Akb" id="XCG-Ez-UQE"/>
                         <outlet property="searchBarOutlet" destination="ceq-aY-M8H" id="1TK-yq-JZd"/>
-                        <outlet property="searchBarTopContraint" destination="OKA-cu-q7P" id="usO-hD-7qT"/>
                         <outlet property="searchDisplayController" destination="oEf-HK-ZIC" id="C4C-VF-QwS"/>
                         <outlet property="secondButtonOutlet" destination="Med-UF-qtJ" id="hGZ-lq-aa6"/>
                         <outlet property="sixthButtonOutlet" destination="EBR-ft-tiS" id="gDH-D8-B1Z"/>
