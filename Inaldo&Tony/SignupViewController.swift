@@ -10,6 +10,8 @@ import UIKit
 
 class SignupViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
     //vars
     var coding = ""
     var design = ""
@@ -18,17 +20,26 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     var science = ""
     var other = ""
 
+    
+    //Hide keyboard when user taps anywhere
+    @IBAction func tapToDismissKeyboard(_ sender: Any) {
+        self.view.endEditing(true)
+        
+    }
+    
+    
     //outlets
     @IBOutlet weak var nameTextField: RoundedUITextField!
     @IBOutlet weak var surnameTextField: RoundedUITextField!
     @IBOutlet weak var emailTextField: RoundedUITextField!
     @IBOutlet weak var badgeTextField: RoundedUITextField!
     @IBOutlet weak var passwordTextField: RoundedUITextField!
+    @IBOutlet weak var descriptionTextField: AlternativeRoundedUITextField!
     
-    @IBAction func tapToDismissKeyboard(_ sender: Any) {
-        self.view.endEditing(true)
-        
-    }
+    
+    
+    
+    
     @IBOutlet weak var datePicker: UIDatePicker!
     
     
@@ -39,22 +50,24 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scienceButton: RoundedButton!
     @IBOutlet weak var otherButton: RoundedButton!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
+       
         
         //picker
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")
         
+        //delegate
         self.nameTextField.delegate = self
         self.surnameTextField.delegate = self
         self.emailTextField.delegate = self
         self.badgeTextField.delegate = self
         self.passwordTextField.delegate = self
+        self.descriptionTextField.delegate = self
+        
         //Edit the placeholder into the main storyboard
+        
         
     }
 
@@ -67,63 +80,50 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         self.navigationController?.isNavigationBarHidden = false
+        
+        
+        //KeyboardNotificationTrigger
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)),
+                                               name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)),
+                                               name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+
+    }
+    
+    override open func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        NotificationCenter.default.removeObserver(self)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-    //press return
+    //Hide Keyboard when user press return key
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        print("ReturnPressed")
         return (true)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+       
+    }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+    let userInfo:NSDictionary = notification.userInfo! as NSDictionary
+    let keyboardFrame:NSValue = userInfo.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
+    let keyboardRectangle = keyboardFrame.cgRectValue
+    let keyboardHeight = keyboardRectangle.height
+    // do whatever you want with this keyboard height
+      super.view.frame.origin = CGPoint(x: 0.0, y: -(keyboardHeight - 50.0))
+        
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+       super.view.frame.origin = CGPoint(x: 0.0, y: 0.0)
+        
     }
 
     
-    
+
 }
-
-
-/*
- 11:06
- 
- class SecondViewController: UIViewController {
- 
- @IBOutlet weak var textField: UITextField!
- @IBAction func swipeDown(_ sender: Any) {
- Write.shared.writing = textField.text!
- self.dismiss(animated: true, completion: nil)
- }
- override func viewDidLoad() {
- super.viewDidLoad()
- 
- // Do any additional setup after loading the view.
- }
- 
- override func didReceiveMemoryWarning() {
- super.didReceiveMemoryWarning()
- // Dispose of any resources that can be recreated.
- }
- 
- 
- 
- override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
- self.view.endEditing(true)
- }
- 
- 
- 
- /*
- // MARK: - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- // Get the new view controller using segue.destinationViewController.
- // Pass the selected object to the new view controller.
- }
- */
- 
- }
- 
- */
