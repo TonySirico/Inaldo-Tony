@@ -158,9 +158,13 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1000" id="Jaj-Mp-W1U"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="oGa-au-ZJx" appends="YES" id="QLu-Jo-2JM"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -198,6 +202,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vst-uB-Cux" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="oGa-au-ZJx">
+                    <connections>
+                        <action selector="tapToDismissKeyboard:" destination="Dwx-Pk-NBg" id="WZG-dh-NP9"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-2770.4000000000001" y="1190.1049475262371"/>
         </scene>

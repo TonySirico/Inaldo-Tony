@@ -25,6 +25,10 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var badgeTextField: RoundedUITextField!
     @IBOutlet weak var passwordTextField: RoundedUITextField!
     
+    @IBAction func tapToDismissKeyboard(_ sender: Any) {
+        self.view.endEditing(true)
+        
+    }
     @IBOutlet weak var datePicker: UIDatePicker!
     
     
@@ -40,10 +44,16 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+      
+        
         //picker
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")
         
         self.nameTextField.delegate = self
+        self.surnameTextField.delegate = self
+        self.emailTextField.delegate = self
+        self.badgeTextField.delegate = self
+        self.passwordTextField.delegate = self
         //Edit the placeholder into the main storyboard
         
     }
@@ -59,7 +69,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.isNavigationBarHidden = false
     }
 
-    //touch outside keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -67,7 +76,54 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     //press return
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        print("ReturnPressed")
         return (true)
     }
 
+    
+    
 }
+
+
+/*
+ 11:06
+ 
+ class SecondViewController: UIViewController {
+ 
+ @IBOutlet weak var textField: UITextField!
+ @IBAction func swipeDown(_ sender: Any) {
+ Write.shared.writing = textField.text!
+ self.dismiss(animated: true, completion: nil)
+ }
+ override func viewDidLoad() {
+ super.viewDidLoad()
+ 
+ // Do any additional setup after loading the view.
+ }
+ 
+ override func didReceiveMemoryWarning() {
+ super.didReceiveMemoryWarning()
+ // Dispose of any resources that can be recreated.
+ }
+ 
+ 
+ 
+ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+ self.view.endEditing(true)
+ }
+ 
+ 
+ 
+ /*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destinationViewController.
+ // Pass the selected object to the new view controller.
+ }
+ */
+ 
+ }
+ 
+ */
