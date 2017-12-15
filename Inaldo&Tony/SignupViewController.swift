@@ -147,8 +147,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         myDatePicker.setValue(UIColor.white, forKeyPath: "textColor")
         myDatePicker.setValue(UIColor.black, forKey: "backgroundColor")
         
-        
-        
+        descriptionTextField.editingRect(forBounds: CGRect(x: 80, y: 0, width: 0, height: 0))
         
     }
 
