@@ -32,6 +32,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
         
         super.view.backgroundColor = UIColor(red:0.07, green:0.07, blue:0.07, alpha:1.0)
         
+        SearchBarOutletTopContraint.constant = super.view.frame.height/25.65384
+        
         categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:-super.view.frame.height/33.35)
         
         backButtonOutlet.center = CGPoint(x: super.view.frame.width/7.9, y: -super.view.frame.height/33.35)
@@ -112,11 +114,11 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
         UIView.animate(withDuration: 0.3, delay: 0.3, animations: {self.categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:-super.view.frame.height/33.35)
         })
         if isSearchBarShrinked == false {
-            SearchBarOutletTopContraint.constant = 26
+            SearchBarOutletTopContraint.constant = super.view.frame.height/25.65384
             UIView.animate(withDuration: 0.3, delay:0.3, animations: {self.searchBarOutlet.center = CGPoint(x: super.view.frame.width/2, y:super.view.frame.height/12.35185)
             })
             UIView.animate(withDuration: 0.3, delay:0.3, animations: {
-                self.searchBarOutlet.frame = CGRect(origin: CGPoint(x: 0, y:26), size: CGSize(width: super.view.frame.width, height: super.view.frame.height/11.9107))
+                self.searchBarOutlet.frame = CGRect(origin: CGPoint(x: 0, y:super.view.frame.height/25.65384), size: CGSize(width: super.view.frame.width, height: super.view.frame.height/11.9107))
             })
             UIView.animate(withDuration: 0.3, delay:0.3, animations: {self.backButtonOutlet.center = CGPoint(x: super.view.frame.width/7.9, y:-super.view.frame.height/33.35)
             })

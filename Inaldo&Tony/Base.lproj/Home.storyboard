@@ -42,7 +42,7 @@
                                 <rect key="frame" x="24" y="93" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Coding" image="Coding"/>
+                                <state key="normal" image="Coding"/>
                                 <connections>
                                     <action selector="firstButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="xhp-fz-vHD"/>
                                 </connections>
@@ -51,7 +51,7 @@
                                 <rect key="frame" x="201" y="93" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Design" image="Design"/>
+                                <state key="normal" image="Design"/>
                                 <connections>
                                     <action selector="secondButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="xxE-wv-Ddu"/>
                                 </connections>
@@ -60,7 +60,7 @@
                                 <rect key="frame" x="24" y="268" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Language" image="Language"/>
+                                <state key="normal" image="Language"/>
                                 <connections>
                                     <action selector="thirdButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="cGh-mj-GRw"/>
                                 </connections>
@@ -69,7 +69,7 @@
                                 <rect key="frame" x="201" y="268" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Sport" image="Business"/>
+                                <state key="normal" image="Business"/>
                                 <connections>
                                     <action selector="fourthButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="LRt-8S-HCY"/>
                                 </connections>
@@ -78,7 +78,7 @@
                                 <rect key="frame" x="24" y="443" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Music" image="Music"/>
+                                <state key="normal" image="Music"/>
                                 <connections>
                                     <action selector="fifthButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="ZzY-AZ-68o"/>
                                 </connections>
@@ -109,7 +109,7 @@
                                 <rect key="frame" x="201" y="443" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Others" image="Others"/>
+                                <state key="normal" image="Others"/>
                                 <connections>
                                     <action selector="sixthButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="b0e-33-yjU"/>
                                 </connections>
