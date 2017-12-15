@@ -27,6 +27,19 @@ class RoundedButton: UIButton {
         layer.borderWidth = 1
         layer.borderColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0).cgColor
         
+        if self.isSelected {
+            
+            self.backgroundColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
+            self.titleLabel?.textColor = UIColor.black
+            
+        } else {
+            self.backgroundColor = UIColor.black
+            self.titleLabel?.textColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
+            
+        }
+        
+        
+        
     }
     
     

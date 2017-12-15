@@ -47,12 +47,12 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var datePicker: UIDatePicker!
     
     
-    @IBOutlet weak var codingButton: UIButton!
-    @IBOutlet weak var designButton: UIButton!
-    @IBOutlet weak var businessButton: UIButton!
-    @IBOutlet weak var languageButton: UIButton!
-    @IBOutlet weak var scienceButton: UIButton!
-    @IBOutlet weak var otherButton: UIButton!
+    @IBOutlet weak var codingButton: RoundedButton!
+    @IBOutlet weak var designButton: RoundedButton!
+    @IBOutlet weak var businessButton: RoundedButton!
+    @IBOutlet weak var languageButton: RoundedButton!
+    @IBOutlet weak var scienceButton: RoundedButton!
+    @IBOutlet weak var otherButton: RoundedButton!
     
     @IBAction func codingAction(_ sender: Any) {
         if !codingButton.isSelected {
@@ -266,8 +266,9 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         case "other":
             other = descriptionTextField.text!
             if other != "" {
-                otherButton.backgroundColor = UIColor.green
-                otherButton.titleLabel?.textColor = UIColor.black
+                //otherButton.backgroundColor = UIColor.green
+               // otherButton.layer.backgroundColor = UIColor.green.cgColor
+                otherButton.titleLabel!.textColor = UIColor.black
             } else {
                 otherButton.backgroundColor = UIColor.black
             }
