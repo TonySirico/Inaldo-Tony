@@ -9,6 +9,9 @@
 import UIKit
 
 class RoundedButton: UIButton {
+    
+    let mainColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -22,20 +25,23 @@ class RoundedButton: UIButton {
         super.layoutSubviews()
         layer.cornerRadius = frame.height/4
         //layer.borderColor = isEnabled ? tintColor.cgColor : UIColor.lightGray.cgColor
-        self.tintColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
+        self.tintColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:0.0)
         self.frame.size = CGSize(width: 80, height: 40)
         layer.borderWidth = 1
         layer.borderColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0).cgColor
         
         if self.isSelected {
             
-            self.backgroundColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
+            self.backgroundColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:0.6)
             self.titleLabel?.textColor = UIColor.black
             
         } else {
-            self.backgroundColor = UIColor.black
-            self.titleLabel?.textColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
-            
+            if self.backgroundColor != mainColor {
+                self.backgroundColor = UIColor.black
+                self.titleLabel?.textColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
+            } else {
+                self.titleLabel?.textColor = UIColor.black
+            }
         }
         
         

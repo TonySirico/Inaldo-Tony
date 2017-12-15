@@ -12,6 +12,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     let ourGreen = UIColor(red:0.31, green:0.82, blue:0.30, alpha:0.0)
     
+    let mainColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
+    
     
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
@@ -60,7 +62,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             codingButton.isSelected = true
             descriptionTextField.text! = coding
             flag = "coding"
-            print("CODING BUTTON: FLAG \(flag)")
+            
         }
         
         
@@ -73,7 +75,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             designButton.isSelected = true
             descriptionTextField.text! = design
             flag = "design"
-            print("CODING DESIGN: FLAG \(flag)")
+            
         }
     }
     
@@ -217,29 +219,25 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         case "coding":
             coding = descriptionTextField.text!
             if coding != "" {
-                codingButton.backgroundColor = UIColor.green
+                codingButton.backgroundColor = mainColor
                 codingButton.titleLabel?.textColor = UIColor.black
-                print("\(flag) not empty!")
             } else {
                 codingButton.backgroundColor = UIColor.black
-                print("\(flag) empty!")
             }
             
         case "design":
             design = descriptionTextField.text!
             if design != "" {
-                designButton.backgroundColor = UIColor.green
-                businessButton.titleLabel?.textColor = UIColor.black
-                print("\(flag) not empty!")
+                designButton.backgroundColor = mainColor
+                designButton.titleLabel?.textColor = UIColor.black
             } else {
                 designButton.backgroundColor = UIColor.black
-                print("\(flag) empty!")
             }
         
         case "business":
             business = descriptionTextField.text!
             if business != "" {
-                businessButton.backgroundColor = UIColor.green
+                businessButton.backgroundColor = mainColor
                 businessButton.titleLabel?.textColor = UIColor.black
             } else {
                 businessButton.backgroundColor = UIColor.black
@@ -247,7 +245,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         case "language":
             language = descriptionTextField.text!
             if language != "" {
-                languageButton.backgroundColor = UIColor.green
+                languageButton.backgroundColor = mainColor
                 languageButton.titleLabel?.textColor = UIColor.black
             } else {
                 languageButton.backgroundColor = UIColor.black
@@ -256,19 +254,17 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         case "science":
             science = descriptionTextField.text!
             if science != "" {
-                scienceButton.backgroundColor = UIColor.green
+                scienceButton.backgroundColor = mainColor
                 scienceButton.titleLabel?.textColor = UIColor.black
             } else {
                 scienceButton.backgroundColor = UIColor.black
-                
             }
         
         case "other":
             other = descriptionTextField.text!
             if other != "" {
-                //otherButton.backgroundColor = UIColor.green
-               // otherButton.layer.backgroundColor = UIColor.green.cgColor
-                otherButton.titleLabel!.textColor = UIColor.black
+                otherButton.backgroundColor = mainColor
+                otherButton.titleLabel?.textColor = UIColor.black
             } else {
                 otherButton.backgroundColor = UIColor.black
             }

@@ -148,81 +148,76 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekW-KP-1BH" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="149" y="585" width="48" height="30"/>
+                                                <rect key="frame" x="147" y="615" width="48" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="Design"/>
                                                 <connections>
                                                     <action selector="designAction:" destination="Dwx-Pk-NBg" eventType="touchUpInside" id="tph-2x-GUu"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBc-UH-Gbw" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="257" y="585" width="62" height="30"/>
+                                                <rect key="frame" x="255" y="615" width="62" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="Business"/>
                                                 <connections>
                                                     <action selector="businessAction:" destination="Dwx-Pk-NBg" eventType="touchUpInside" id="vWd-6G-DtO"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0U-0V-rSp" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="45" y="633" width="68" height="30"/>
+                                                <rect key="frame" x="43" y="663" width="68" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="Language"/>
                                                 <connections>
                                                     <action selector="languageAction:" destination="Dwx-Pk-NBg" eventType="touchUpInside" id="96W-JT-bhZ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGR-8f-8dI" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="146" y="633" width="55" height="30"/>
+                                                <rect key="frame" x="144" y="663" width="55" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="Science"/>
                                                 <connections>
                                                     <action selector="scienceAction:" destination="Dwx-Pk-NBg" eventType="touchUpInside" id="n5r-fs-gM4"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88D-6i-cdG" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="259" y="633" width="47" height="30"/>
+                                                <rect key="frame" x="257" y="663" width="47" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <state key="normal" title="Others"/>
                                                 <connections>
                                                     <action selector="otherAction:" destination="Dwx-Pk-NBg" eventType="touchUpInside" id="yHl-pe-x6s"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jn6-21-Um5" customClass="AlternativeRoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="705" width="359" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5a-jI-ig9" customClass="RoundedButtonFilled" customModule="Inaldo_Tony" customModuleProvider="target">
                                                 <rect key="frame" x="57" y="865" width="260" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Sign Up"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pKH-hg-PF0" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
-                                                <rect key="frame" x="56" y="585" width="49" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKH-hg-PF0" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="54" y="615" width="49" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="Coding">
-                                                            <attributes>
-                                                                <font key="NSFont" metaFont="system" size="15"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                </state>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                <state key="normal" title="Coding"/>
                                                 <connections>
                                                     <action selector="codingAction:" destination="Dwx-Pk-NBg" eventType="touchUpInside" id="PFf-oi-3Wa"/>
                                                 </connections>
                                             </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select a main skill below" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jn6-21-Um5" customClass="AlternativeRoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="556" width="359" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Jn6-21-Um5" secondAttribute="trailing" constant="8" id="Hiu-74-iHt"/>
                                             <constraint firstAttribute="height" constant="1000" id="Jaj-Mp-W1U"/>
-                                            <constraint firstItem="Jn6-21-Um5" firstAttribute="leading" secondItem="d9c-iM-3Nf" secondAttribute="leading" constant="8" id="Sfo-Jr-7op"/>
-                                            <constraint firstAttribute="bottom" secondItem="Jn6-21-Um5" secondAttribute="bottom" constant="171" id="Tip-QX-cl5"/>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="oGa-au-ZJx" appends="YES" id="QLu-Jo-2JM"/>
@@ -232,6 +227,7 @@
                                 <constraints>
                                     <constraint firstItem="d9c-iM-3Nf" firstAttribute="leading" secondItem="d3Z-AG-pHy" secondAttribute="leading" id="AQc-m1-97A"/>
                                     <constraint firstItem="d9c-iM-3Nf" firstAttribute="top" secondItem="d3Z-AG-pHy" secondAttribute="top" id="LW8-yP-sbK"/>
+                                    <constraint firstAttribute="bottom" secondItem="d9c-iM-3Nf" secondAttribute="bottom" constant="20" symbolic="YES" id="Q9h-rt-ZWb"/>
                                     <constraint firstAttribute="bottom" secondItem="d9c-iM-3Nf" secondAttribute="bottom" id="Tux-UC-Ovi"/>
                                     <constraint firstAttribute="trailing" secondItem="d9c-iM-3Nf" secondAttribute="trailing" id="hle-5N-WHg"/>
                                 </constraints>
