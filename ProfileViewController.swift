@@ -2,65 +2,50 @@
 //  ProfileViewController.swift
 //  Inaldo&Tony
 //
-//  Created by Antonio Sirica on 11/12/2017.
+//  Created by Andrea on 15/12/2017.
 //  Copyright © 2017 Antonio Sirica. All rights reserved.
 //
 
 import UIKit
 
-class ProfileTableViewCell: UITableViewCell
-{
-    @IBOutlet weak var skillLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-}
-
-class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
-{
+class ProfileViewController: UIViewController {
     
-    @IBOutlet weak var profileTableView: UITableView!
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var ProfilePic: RoundImageView!
     
-    var skill = ["Coding", "Desing", "Economics", "Languages", "Others", "Musical Instruments"]
-    var profileDescription = ["Coding is Coding is Coding is Coding is Coding is Coding is Coding is Coding is Coding is Coding is Coding is Coding is Coding is Coding is Coding is Coding is Coding is Coding is", "Desing is Design Desing is Design Desing is Design Desing is Design", "Economics is Economics is Economics is Economics", "Languages is Languages is Languages is Languages", "Others is Others is Others is Others is Others is", "MI is MI"]
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var surnameLabel: UILabel!
+    @IBOutlet weak var datebirthdayLabel: UILabel!
+    @IBOutlet weak var badgeLabel: UILabel!
+    @IBOutlet weak var personalTime: UILabel!
     
-    override func viewDidLoad()
-    {
+    
+    
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2
-        self.profileImageView.clipsToBounds = true
-        
-        profileTableView.dataSource = self
-        profileTableView.delegate = self
-        
-        profileTableView.estimatedRowHeight = 30
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        let count = skill.count
-        return count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as? ProfileTableViewCell
-        
-        let skillForLabel = skill[indexPath.row]
-        let descriptionForLabel = profileDescription[indexPath.row]
-
-        cell!.skillLabel!.text = skillForLabel
-        cell!.descriptionLabel!.text = descriptionForLabel
-        
-        return cell!
+        nameLabel.center = CGPoint(x: 120 , y: 252 )
+        surnameLabel.center = CGPoint(x: 247, y: 252)
+        datebirthdayLabel.center = CGPoint(x: 188, y:284 )
+        badgeLabel.center = CGPoint(x: 187, y: 315)
+        personalTime.center = CGPoint(x: 189, y: 371)
+        // Do any additional setup after loading the view.
     }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBOutlet weak var navBarOutlet: UINavigationBar!
+    
+    /*
+    // MARK: - Navigation
 
-    
-    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }
