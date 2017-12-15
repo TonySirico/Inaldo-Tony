@@ -39,6 +39,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var surnameTextField: RoundedUITextField!
     @IBOutlet weak var emailTextField: RoundedUITextField!
     @IBOutlet weak var badgeTextField: RoundedUITextField!
+    @IBOutlet weak var birthdayTextField: RoundedUITextField!
     @IBOutlet weak var passwordTextField: RoundedUITextField!
     @IBOutlet weak var descriptionTextField: AlternativeRoundedUITextField!
     
@@ -125,7 +126,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
        
         
         //picker
-        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
+       // datePicker.setValue(UIColor.white, forKeyPath: "textColor")
         
         //delegate
         self.nameTextField.delegate = self
@@ -136,6 +137,17 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         self.descriptionTextField.delegate = self
         
         //Edit the placeholder into the main storyboard
+        
+        //Calling DatePicker when typing into birthdayTextField
+        let myDatePicker = UIDatePicker()
+        myDatePicker.datePickerMode = UIDatePickerMode.date
+        myDatePicker.addTarget(self, action: #selector(SignupViewController.datePickeralueChanged(sender:)), for: UIControlEvents.valueChanged)
+        birthdayTextField.inputView = myDatePicker
+        
+        myDatePicker.setValue(UIColor.white, forKeyPath: "textColor")
+        myDatePicker.setValue(UIColor.black, forKey: "backgroundColor")
+        
+        
         
         
     }
@@ -281,6 +293,13 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         
     }
 
-    
+    @objc func datePickeralueChanged(sender: UIDatePicker) {
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.medium
+        formatter.timeStyle = DateFormatter.Style.none
+        formatter.dateFormat = "dd/MMMM/y"
+        birthdayTextField.text = formatter.string(from: sender.date)
+    }
 
 }
