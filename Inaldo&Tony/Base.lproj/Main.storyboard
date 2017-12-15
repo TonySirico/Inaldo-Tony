@@ -151,31 +151,49 @@
                                                 <rect key="frame" x="56" y="585" width="46" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="codingAction:" destination="Dwx-Pk-NBg" eventType="touchUpInside" id="PFf-oi-3Wa"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekW-KP-1BH" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
                                                 <rect key="frame" x="150" y="585" width="46" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="designAction:" destination="Dwx-Pk-NBg" eventType="touchUpInside" id="tph-2x-GUu"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBc-UH-Gbw" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
                                                 <rect key="frame" x="265" y="585" width="46" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="businessAction:" destination="Dwx-Pk-NBg" eventType="touchUpInside" id="vWd-6G-DtO"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0U-0V-rSp" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
                                                 <rect key="frame" x="56" y="633" width="46" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="languageAction:" destination="Dwx-Pk-NBg" eventType="touchUpInside" id="96W-JT-bhZ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGR-8f-8dI" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
                                                 <rect key="frame" x="150" y="633" width="46" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="scienceAction:" destination="Dwx-Pk-NBg" eventType="touchUpInside" id="n5r-fs-gM4"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88D-6i-cdG" customClass="RoundedButton" customModule="Inaldo_Tony" customModuleProvider="target">
                                                 <rect key="frame" x="259" y="633" width="46" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="otherAction:" destination="Dwx-Pk-NBg" eventType="touchUpInside" id="yHl-pe-x6s"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jn6-21-Um5" customClass="AlternativeRoundedUITextField" customModule="Inaldo_Tony" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="705" width="359" height="30"/>

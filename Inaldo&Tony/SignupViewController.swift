@@ -50,6 +50,61 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scienceButton: RoundedButton!
     @IBOutlet weak var otherButton: RoundedButton!
     
+    @IBAction func codingAction(_ sender: Any) {
+        if !codingButton.isSelected {
+            deselectAllButtons()
+            codingButton.isSelected = true
+            descriptionTextField.text! = coding
+        }
+        
+        
+    }
+    
+    
+    @IBAction func designAction(_ sender: Any) {
+        if !designButton.isSelected {
+            deselectAllButtons()
+            designButton.isSelected = true
+            descriptionTextField.text! = design
+        }
+    }
+    
+    
+    @IBAction func businessAction(_ sender: Any) {
+        if !businessButton.isSelected {
+            deselectAllButtons()
+            businessButton.isSelected = true
+            descriptionTextField.text! = business
+        }
+    }
+    
+    
+    @IBAction func languageAction(_ sender: Any) {
+        if !languageButton.isSelected {
+            deselectAllButtons()
+            languageButton.isSelected = true
+            descriptionTextField.text! = language
+        }
+    }
+    
+    
+    @IBAction func scienceAction(_ sender: Any) {
+        if !scienceButton.isSelected {
+            deselectAllButtons()
+            scienceButton.isSelected = true
+            descriptionTextField.text! = science
+        }
+    }
+    
+    @IBAction func otherAction(_ sender: Any) {
+        if !otherButton.isSelected {
+            deselectAllButtons()
+            otherButton.isSelected = true
+            descriptionTextField.text! = other
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -121,6 +176,17 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     @objc func keyboardWillHide(notification: Notification) {
        super.view.frame.origin = CGPoint(x: 0.0, y: 0.0)
+        
+    }
+    
+    func deselectAllButtons() {
+        
+        codingButton.isSelected = false
+        designButton.isSelected = false
+        businessButton.isSelected = false
+        languageButton.isSelected = false
+        scienceButton.isSelected = false
+        otherButton.isSelected = false
         
     }
 
