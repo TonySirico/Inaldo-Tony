@@ -10,6 +10,11 @@ import UIKit
 
 class SignupViewController: UIViewController, UITextFieldDelegate {
     
+    let ourGreen = UIColor(red:0.31, green:0.82, blue:0.30, alpha:0.0)
+    
+    let mainColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
+    
+    
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     //vars
@@ -19,6 +24,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     var language = ""
     var science = ""
     var other = ""
+    var flag: String = ""
 
     
     //Hide keyboard when user taps anywhere
@@ -33,6 +39,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var surnameTextField: RoundedUITextField!
     @IBOutlet weak var emailTextField: RoundedUITextField!
     @IBOutlet weak var badgeTextField: RoundedUITextField!
+    @IBOutlet weak var birthdayTextField: RoundedUITextField!
     @IBOutlet weak var passwordTextField: RoundedUITextField!
     @IBOutlet weak var descriptionTextField: AlternativeRoundedUITextField!
     
@@ -55,6 +62,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             deselectAllButtons()
             codingButton.isSelected = true
             descriptionTextField.text! = coding
+            flag = "coding"
+            
         }
         
         
@@ -66,6 +75,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             deselectAllButtons()
             designButton.isSelected = true
             descriptionTextField.text! = design
+            flag = "design"
+            
         }
     }
     
@@ -75,6 +86,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             deselectAllButtons()
             businessButton.isSelected = true
             descriptionTextField.text! = business
+            flag = "business"
         }
     }
     
@@ -84,6 +96,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             deselectAllButtons()
             languageButton.isSelected = true
             descriptionTextField.text! = language
+            flag = "language"
         }
     }
     
@@ -93,6 +106,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             deselectAllButtons()
             scienceButton.isSelected = true
             descriptionTextField.text! = science
+            flag = "science"
         }
     }
     
@@ -101,6 +115,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             deselectAllButtons()
             otherButton.isSelected = true
             descriptionTextField.text! = other
+            flag = "other"
         }
     }
     
@@ -111,7 +126,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
        
         
         //picker
-        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
+       // datePicker.setValue(UIColor.white, forKeyPath: "textColor")
         
         //delegate
         self.nameTextField.delegate = self
@@ -122,6 +137,17 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         self.descriptionTextField.delegate = self
         
         //Edit the placeholder into the main storyboard
+        
+        //Calling DatePicker when typing into birthdayTextField
+        let myDatePicker = UIDatePicker()
+        myDatePicker.datePickerMode = UIDatePickerMode.date
+        myDatePicker.addTarget(self, action: #selector(SignupViewController.datePickeralueChanged(sender:)), for: UIControlEvents.valueChanged)
+        birthdayTextField.inputView = myDatePicker
+        
+        myDatePicker.setValue(UIColor.white, forKeyPath: "textColor")
+        myDatePicker.setValue(UIColor.black, forKey: "backgroundColor")
+        
+        
         
         
     }
@@ -161,8 +187,15 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-       
+        
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        descriptionFill()
+        print("TEXTFIELD DID END \(flag)")
+    }
+    
+
     
     @objc func keyboardWillShow(notification: Notification) {
     let userInfo:NSDictionary = notification.userInfo! as NSDictionary
@@ -189,7 +222,84 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         otherButton.isSelected = false
         
     }
-
     
+    
+    func descriptionFill() {
+        
+        switch flag {
+            
+        case "coding":
+            coding = descriptionTextField.text!
+            if coding != "" {
+                codingButton.backgroundColor = mainColor
+                codingButton.titleLabel?.textColor = UIColor.black
+            } else {
+                codingButton.backgroundColor = UIColor.black
+            }
+            
+        case "design":
+            design = descriptionTextField.text!
+            if design != "" {
+                designButton.backgroundColor = mainColor
+                designButton.titleLabel?.textColor = UIColor.black
+            } else {
+                designButton.backgroundColor = UIColor.black
+            }
+        
+        case "business":
+            business = descriptionTextField.text!
+            if business != "" {
+                businessButton.backgroundColor = mainColor
+                businessButton.titleLabel?.textColor = UIColor.black
+            } else {
+                businessButton.backgroundColor = UIColor.black
+            }
+        case "language":
+            language = descriptionTextField.text!
+            if language != "" {
+                languageButton.backgroundColor = mainColor
+                languageButton.titleLabel?.textColor = UIColor.black
+            } else {
+                languageButton.backgroundColor = UIColor.black
+            }
+            
+        case "science":
+            science = descriptionTextField.text!
+            if science != "" {
+                scienceButton.backgroundColor = mainColor
+                scienceButton.titleLabel?.textColor = UIColor.black
+            } else {
+                scienceButton.backgroundColor = UIColor.black
+            }
+        
+        case "other":
+            other = descriptionTextField.text!
+            if other != "" {
+                otherButton.backgroundColor = mainColor
+                otherButton.titleLabel?.textColor = UIColor.black
+            } else {
+                otherButton.backgroundColor = UIColor.black
+            }
+            
+            
+            
+        default:
+            deselectAllButtons()
+            
+        }
+        
+        
+        
+        
+    }
+
+    @objc func datePickeralueChanged(sender: UIDatePicker) {
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.medium
+        formatter.timeStyle = DateFormatter.Style.none
+        formatter.dateFormat = "dd/MMMM/y"
+        birthdayTextField.text = formatter.string(from: sender.date)
+    }
 
 }

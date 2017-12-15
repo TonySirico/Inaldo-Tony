@@ -28,6 +28,7 @@ class RoundedButtonFilled: UIButton {
         layer.borderColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0).cgColor
         self.backgroundColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
         self.titleLabel?.textColor = UIColor.white
+        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         
     }
     
