@@ -12,6 +12,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     let ourGreen = UIColor(red:0.31, green:0.82, blue:0.30, alpha:0.0)
     
+    let mainColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
+    
     
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
@@ -37,6 +39,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var surnameTextField: RoundedUITextField!
     @IBOutlet weak var emailTextField: RoundedUITextField!
     @IBOutlet weak var badgeTextField: RoundedUITextField!
+    @IBOutlet weak var birthdayTextField: RoundedUITextField!
     @IBOutlet weak var passwordTextField: RoundedUITextField!
     @IBOutlet weak var descriptionTextField: AlternativeRoundedUITextField!
     
@@ -47,12 +50,12 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var datePicker: UIDatePicker!
     
     
-    @IBOutlet weak var codingButton: UIButton!
-    @IBOutlet weak var designButton: UIButton!
-    @IBOutlet weak var businessButton: UIButton!
-    @IBOutlet weak var languageButton: UIButton!
-    @IBOutlet weak var scienceButton: UIButton!
-    @IBOutlet weak var otherButton: UIButton!
+    @IBOutlet weak var codingButton: RoundedButton!
+    @IBOutlet weak var designButton: RoundedButton!
+    @IBOutlet weak var businessButton: RoundedButton!
+    @IBOutlet weak var languageButton: RoundedButton!
+    @IBOutlet weak var scienceButton: RoundedButton!
+    @IBOutlet weak var otherButton: RoundedButton!
     
     @IBAction func codingAction(_ sender: Any) {
         if !codingButton.isSelected {
@@ -60,7 +63,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             codingButton.isSelected = true
             descriptionTextField.text! = coding
             flag = "coding"
-            print("CODING BUTTON: FLAG \(flag)")
+            
         }
         
         
@@ -73,7 +76,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             designButton.isSelected = true
             descriptionTextField.text! = design
             flag = "design"
-            print("CODING DESIGN: FLAG \(flag)")
+            
         }
     }
     
@@ -123,7 +126,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
        
         
         //picker
-        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
+       // datePicker.setValue(UIColor.white, forKeyPath: "textColor")
         
         //delegate
         self.nameTextField.delegate = self
@@ -134,6 +137,17 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         self.descriptionTextField.delegate = self
         
         //Edit the placeholder into the main storyboard
+        
+        //Calling DatePicker when typing into birthdayTextField
+        let myDatePicker = UIDatePicker()
+        myDatePicker.datePickerMode = UIDatePickerMode.date
+        myDatePicker.addTarget(self, action: #selector(SignupViewController.datePickeralueChanged(sender:)), for: UIControlEvents.valueChanged)
+        birthdayTextField.inputView = myDatePicker
+        
+        myDatePicker.setValue(UIColor.white, forKeyPath: "textColor")
+        myDatePicker.setValue(UIColor.black, forKey: "backgroundColor")
+        
+        
         
         
     }
@@ -217,29 +231,25 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         case "coding":
             coding = descriptionTextField.text!
             if coding != "" {
-                codingButton.backgroundColor = UIColor.green
+                codingButton.backgroundColor = mainColor
                 codingButton.titleLabel?.textColor = UIColor.black
-                print("\(flag) not empty!")
             } else {
                 codingButton.backgroundColor = UIColor.black
-                print("\(flag) empty!")
             }
             
         case "design":
             design = descriptionTextField.text!
             if design != "" {
-                designButton.backgroundColor = UIColor.green
-                businessButton.titleLabel?.textColor = UIColor.black
-                print("\(flag) not empty!")
+                designButton.backgroundColor = mainColor
+                designButton.titleLabel?.textColor = UIColor.black
             } else {
                 designButton.backgroundColor = UIColor.black
-                print("\(flag) empty!")
             }
         
         case "business":
             business = descriptionTextField.text!
             if business != "" {
-                businessButton.backgroundColor = UIColor.green
+                businessButton.backgroundColor = mainColor
                 businessButton.titleLabel?.textColor = UIColor.black
             } else {
                 businessButton.backgroundColor = UIColor.black
@@ -247,7 +257,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         case "language":
             language = descriptionTextField.text!
             if language != "" {
-                languageButton.backgroundColor = UIColor.green
+                languageButton.backgroundColor = mainColor
                 languageButton.titleLabel?.textColor = UIColor.black
             } else {
                 languageButton.backgroundColor = UIColor.black
@@ -256,17 +266,16 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         case "science":
             science = descriptionTextField.text!
             if science != "" {
-                scienceButton.backgroundColor = UIColor.green
+                scienceButton.backgroundColor = mainColor
                 scienceButton.titleLabel?.textColor = UIColor.black
             } else {
                 scienceButton.backgroundColor = UIColor.black
-                
             }
         
         case "other":
             other = descriptionTextField.text!
             if other != "" {
-                otherButton.backgroundColor = UIColor.green
+                otherButton.backgroundColor = mainColor
                 otherButton.titleLabel?.textColor = UIColor.black
             } else {
                 otherButton.backgroundColor = UIColor.black
@@ -284,6 +293,13 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         
     }
 
-    
+    @objc func datePickeralueChanged(sender: UIDatePicker) {
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.medium
+        formatter.timeStyle = DateFormatter.Style.none
+        formatter.dateFormat = "dd/MMMM/y"
+        birthdayTextField.text = formatter.string(from: sender.date)
+    }
 
 }
