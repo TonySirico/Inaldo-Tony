@@ -132,6 +132,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="SearchBarOutletTopContraint" destination="w0Z-xQ-Kat" id="98u-yo-Lwr"/>
+                        <outlet property="SearchBarRightContraint" destination="y2U-fw-Apt" id="wUu-Ux-WW2"/>
                         <outlet property="backButtonOutlet" destination="4Ei-DP-VCQ" id="JNP-xv-fZY"/>
                         <outlet property="categoryLabelOutlet" destination="TqW-0t-wAg" id="2Ri-6D-5Up"/>
                         <outlet property="fifthButtonOutlet" destination="fcN-Dr-0vv" id="3lC-E4-sFj"/>

@@ -34,6 +34,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
         
         SearchBarOutletTopContraint.constant = super.view.frame.height/25.65384
         
+        searchBarConstraint.constant = 0
+        
         categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:-super.view.frame.height/33.35)
         
         backButtonOutlet.center = CGPoint(x: super.view.frame.width/7.9, y: -super.view.frame.height/33.35)
@@ -96,6 +98,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
     }
     
     func moveLabelIn() {
+        backButtonOutlet.setImage(#imageLiteral(resourceName: "Back"), for: .normal)
         moveButtonsOut()
         let when = DispatchTime.now() + 0.3
         DispatchQueue.main.asyncAfter(deadline: when) {
@@ -124,10 +127,10 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
             })
         } else {
             UIView.animate(withDuration: 0.3, animations: {
-                self.searchBarConstraint.constant = 0
+                self.SearchBarRightContraint.constant = 0
                 self.view.layoutIfNeeded()
             })
-            UIView.animate(withDuration: 0.3, animations: {self.backButtonOutlet.center = CGPoint(x: -super.view.frame.width/5.597, y:super.view.frame.height/12.35185)
+            UIView.animate(withDuration: 0.3, animations: {self.backButtonOutlet.center = CGPoint(x: super.view.frame.width + super.view.frame.width/5.597, y:super.view.frame.height/12.35185)
             })
         }
         searchBarOutlet.text = ""
@@ -144,7 +147,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
     }
     
     func prepareBackButtonForSearchBar() {
-        self.backButtonOutlet.center = CGPoint(x: -super.view.frame.width/5.597, y:super.view.frame.height/12.35185)
+        self.backButtonOutlet.center = CGPoint(x: super.view.frame.width + super.view.frame.width/5.597, y:super.view.frame.height/12.35185)
     }
     
     func prepareBackButtonForCategories() {
@@ -152,13 +155,14 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
     }
     
     func shrinkSearchBar() {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.searchBarConstraint.constant = super.view.frame.width/4.41176
-            self.view.layoutIfNeeded()
-        })
         if isSearchBarShrinked == false {
             prepareBackButtonForSearchBar()
-            UIView.animate(withDuration: 0.3, animations: {self.backButtonOutlet.center = CGPoint(x: super.view.frame.width/7.9, y:super.view.frame.height/12.35185)
+            backButtonOutlet.setImage(#imageLiteral(resourceName: "Cancel"), for: .normal)
+            UIView.animate(withDuration: 0.3, animations: {
+                self.SearchBarRightContraint.constant = -super.view.frame.width/4.41176
+                self.view.layoutIfNeeded()
+            })
+            UIView.animate(withDuration: 0.3, animations: {self.backButtonOutlet.center = CGPoint(x: super.view.frame.width - super.view.frame.width/7.9, y:super.view.frame.height/12.35185)
             })
         }
         isSearchBarShrinked = true
@@ -177,6 +181,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var searchBarOutlet: UISearchBar!
     @IBOutlet weak var searchBarConstraint: NSLayoutConstraint!
     @IBOutlet weak var SearchBarOutletTopContraint: NSLayoutConstraint!
+    @IBOutlet weak var SearchBarRightContraint: NSLayoutConstraint!
     
     @IBOutlet weak var categoryLabelOutlet: UILabel!
     
