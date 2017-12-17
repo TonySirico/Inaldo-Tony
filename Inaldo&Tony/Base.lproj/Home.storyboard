@@ -129,9 +129,6 @@
                             <outletCollection property="gestureRecognizers" destination="T8N-ja-5Iz" appends="YES" id="yqS-wH-2kA"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="yfS-yP-iUh">
-                        <nil key="title"/>
-                    </navigationItem>
                     <connections>
                         <outlet property="backButtonOutlet" destination="4Ei-DP-VCQ" id="JNP-xv-fZY"/>
                         <outlet property="categoryLabelOutlet" destination="TqW-0t-wAg" id="2Ri-6D-5Up"/>
