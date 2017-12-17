@@ -140,7 +140,6 @@
                         <outlet property="fourthButtonOutlet" destination="pbJ-cD-15f" id="fai-6b-uUB"/>
                         <outlet property="searchBarConstraint" destination="fLQ-CO-Akb" id="XCG-Ez-UQE"/>
                         <outlet property="searchBarOutlet" destination="ceq-aY-M8H" id="1TK-yq-JZd"/>
-                        <outlet property="searchDisplayController" destination="oEf-HK-ZIC" id="C4C-VF-QwS"/>
                         <outlet property="secondButtonOutlet" destination="Med-UF-qtJ" id="hGZ-lq-aa6"/>
                         <outlet property="sixthButtonOutlet" destination="EBR-ft-tiS" id="gDH-D8-B1Z"/>
                         <outlet property="tableViewOutlet" destination="2XP-Xy-QKh" id="xyX-fl-ppf"/>
@@ -148,14 +147,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3e1-a9-fqs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="oEf-HK-ZIC">
-                    <connections>
-                        <outlet property="delegate" destination="tle-9f-hMS" id="swb-O6-484"/>
-                        <outlet property="searchContentsController" destination="tle-9f-hMS" id="snU-xf-aqg"/>
-                        <outlet property="searchResultsDataSource" destination="tle-9f-hMS" id="JoA-Cs-HZl"/>
-                        <outlet property="searchResultsDelegate" destination="tle-9f-hMS" id="Uap-N3-IRd"/>
-                    </connections>
-                </searchDisplayController>
                 <tapGestureRecognizer id="T8N-ja-5Iz">
                     <connections>
                         <action selector="tapAction:" destination="tle-9f-hMS" id="pgY-sY-PZp"/>
