@@ -133,8 +133,6 @@
                         <nil key="title"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="SearchBarOutletTopContraint" destination="w0Z-xQ-Kat" id="98u-yo-Lwr"/>
-                        <outlet property="SearchBarRightContraint" destination="y2U-fw-Apt" id="wUu-Ux-WW2"/>
                         <outlet property="backButtonOutlet" destination="4Ei-DP-VCQ" id="JNP-xv-fZY"/>
                         <outlet property="categoryLabelOutlet" destination="TqW-0t-wAg" id="2Ri-6D-5Up"/>
                         <outlet property="fifthButtonOutlet" destination="fcN-Dr-0vv" id="3lC-E4-sFj"/>
@@ -142,6 +140,8 @@
                         <outlet property="fourthButtonOutlet" destination="pbJ-cD-15f" id="fai-6b-uUB"/>
                         <outlet property="searchBarConstraint" destination="fLQ-CO-Akb" id="XCG-Ez-UQE"/>
                         <outlet property="searchBarOutlet" destination="ceq-aY-M8H" id="1TK-yq-JZd"/>
+                        <outlet property="searchBarOutletTopConstraint" destination="w0Z-xQ-Kat" id="bKh-SM-hNP"/>
+                        <outlet property="searchBarRightConstraint" destination="y2U-fw-Apt" id="1Jo-O5-eYv"/>
                         <outlet property="secondButtonOutlet" destination="Med-UF-qtJ" id="hGZ-lq-aa6"/>
                         <outlet property="sixthButtonOutlet" destination="EBR-ft-tiS" id="gDH-D8-B1Z"/>
                         <outlet property="tableViewOutlet" destination="2XP-Xy-QKh" id="xyX-fl-ppf"/>

@@ -32,7 +32,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
         
         super.view.backgroundColor = UIColor(red:0.07, green:0.07, blue:0.07, alpha:1.0)
         
-        SearchBarOutletTopContraint.constant = super.view.frame.height/25.65384
+        searchBarOutletTopConstraint.constant = super.view.frame.height/25.65384
         
         categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:-super.view.frame.height/33.35)
         
@@ -100,7 +100,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
         moveButtonsOut()
         let when = DispatchTime.now() + 0.3
         DispatchQueue.main.asyncAfter(deadline: when) {
-            self.SearchBarOutletTopContraint.constant = -super.view.frame.height/11.9107
+            self.searchBarOutletTopConstraint.constant = -super.view.frame.height/11.9107
         }
         UIView.animate(withDuration: 0.3, animations: {self.categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:super.view.frame.height/12.35185)
         })
@@ -115,7 +115,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
         UIView.animate(withDuration: 0.3, delay: 0.3, animations: {self.categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:-super.view.frame.height/33.35)
         })
         if isSearchBarShrinked == false {
-            SearchBarOutletTopContraint.constant = super.view.frame.height/25.65384
+            searchBarOutletTopConstraint.constant = super.view.frame.height/25.65384
             UIView.animate(withDuration: 0.3, delay:0.3, animations: {self.searchBarOutlet.center = CGPoint(x: super.view.frame.width/2, y:super.view.frame.height/12.35185)
             })
             UIView.animate(withDuration: 0.3, delay:0.3, animations: {
@@ -125,7 +125,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
             })
         } else {
             UIView.animate(withDuration: 0.3, animations: {
-                self.SearchBarRightContraint.constant = 0
+                self.searchBarRightConstraint.constant = 0
                 self.view.layoutIfNeeded()
             })
             UIView.animate(withDuration: 0.3, animations: {self.backButtonOutlet.center = CGPoint(x: super.view.frame.width + super.view.frame.width/5.597, y:super.view.frame.height/12.35185)
@@ -157,7 +157,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
             prepareBackButtonForSearchBar()
             backButtonOutlet.setImage(#imageLiteral(resourceName: "Cancel"), for: .normal)
             UIView.animate(withDuration: 0.3, animations: {
-                self.SearchBarRightContraint.constant = -super.view.frame.width/4.41176
+                self.searchBarRightConstraint.constant = -super.view.frame.width/4.41176
                 self.view.layoutIfNeeded()
             })
             UIView.animate(withDuration: 0.3, animations: {self.backButtonOutlet.center = CGPoint(x: super.view.frame.width - super.view.frame.width/7.9, y:super.view.frame.height/12.35185)
@@ -178,8 +178,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBarOutlet: UISearchBar!
     @IBOutlet weak var searchBarConstraint: NSLayoutConstraint!
-    @IBOutlet weak var SearchBarOutletTopContraint: NSLayoutConstraint!
-    @IBOutlet weak var SearchBarRightContraint: NSLayoutConstraint!
+    @IBOutlet weak var searchBarOutletTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var searchBarRightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var categoryLabelOutlet: UILabel!
     
