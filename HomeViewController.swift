@@ -34,8 +34,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
         
         SearchBarOutletTopContraint.constant = super.view.frame.height/25.65384
         
-        searchBarConstraint.constant = 0
-        
         categoryLabelOutlet.center = CGPoint(x: super.view.frame.width/2, y:-super.view.frame.height/33.35)
         
         backButtonOutlet.center = CGPoint(x: super.view.frame.width/7.9, y: -super.view.frame.height/33.35)
