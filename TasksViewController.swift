@@ -8,179 +8,209 @@
 
 import UIKit
 
-class TasksTableViewCell: UITableViewCell
-{
-    @IBOutlet weak var labelName: UILabel!
-    @IBOutlet weak var labelSkill: UILabel!
-    @IBOutlet weak var labelSurname: UILabel!
-    @IBOutlet weak var labelTimeRemaining: UILabel!
-    @IBOutlet weak var labelTimeRequested: UILabel!
+
+class OnGoingTaskCell: UITableViewCell {
     
-    @IBOutlet weak var labelNameSecond: UILabel!
-    @IBOutlet weak var labelSkillSecond: UILabel!
-    @IBOutlet weak var labelSurnameSecond: UILabel!
-    @IBOutlet weak var labelTimeRequestedSecond: UILabel!
-    @IBOutlet weak var labelTimeRemainingSecond: UILabel!
+    @IBOutlet weak var nameSurnameLabel: UILabel!
+    @IBOutlet weak var skillRequestedLabel: UILabel!
+    @IBOutlet weak var timeRequestedLabel: UILabel!
+    @IBOutlet weak var timeLeftLabel: UILabel!
+    @IBOutlet weak var animationImageView: UIImageView!
+    
 }
+
+class oldTaskCell: UITableViewCell {
+    
+    @IBOutlet weak var nameSurnameLabel: UILabel!
+    @IBOutlet weak var timeRequestedLabel: UILabel!
+    @IBOutlet weak var skillRequestedLabel: UILabel!
+    
+}
+
 
 class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet var Controller: UISegmentedControl!
-    @IBOutlet weak var TableView: UITableView!
-    @IBOutlet weak var SecondTableView: UITableView!
-
-
-    var names = ["Cecilia", "Pasquale", "Astrogildo", "Natalia", "Lis", "Perna"]
-    var surnames = ["Silva Ribeiro", "Antonio Ramos Ribeiro", "Toschi Magalhes", "Salti", "Pereira Rios", "Oliveira da Silva Sauro"]
-    var skill = ["Coding", "Desing", "Economy", "Languages", "Others", "Musical Instruments"]
-    var timeRemaining = ["50", "90", "130", "100", "11", "3"]
-    var timeRequested = ["12", "7", "100", "800", "47", "99"]
+   
+    @IBOutlet weak var taskTableView: UITableView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    var namesSegmented = ["Lucia Vania", "Isabel Pereira", "Sol", "Danilo", "Kameni", "Taita"]
-    var surnamesSegmented = ["Silvao", "Perkiasi Silva Saurao", "Lete de Vinci", "Robatini Perske", "Olsen", "Ramos"]
-    var skillSegmented = ["EUA", "Hiking", "User Interface", "User Experience", "Music", "Crafting"]
-    var timeRemainingSegmented = ["23", "900", "900", "5", "38", "11"]
-    var timeRequestedSegmented = ["288", "500", "100", "39", "0", "10"]
-
     
+    
+    var namesA = ["Cecilia", "Pasquale", "Astrogildo", "Natalia", "Lis", "Perna"]
+    var surnamesA = ["Silva Ribeiro", "Antonio Ramos Ribeiro", "Toschi Magalhes", "Salti", "Pereira Rios", "Oliveira da Silva Sauro"]
+    var skillsA = ["Coding", "Desing", "Business", "Languages", "Other", "Other"]
+    var timeRequestedA = ["50", "90", "130", "100", "11", "30"]
+    var timeLeftA = ["12", "7", "100", "800", "47", "99"]
+    
+    var namesB = ["Lucia Vania", "Isabel Pereira", "Sol", "Danilo", "Kameni", "Taita"]
+    var surnamesB = ["Silvao", "Perkiasi Silva Saurao", "Lete de Vinci", "Robatini Perske", "Olsen", "Ramos"]
+    var skillsB = ["Coding", "Coding", "Design", "Other", "Other", "Other"]
+    var timeRequestedB = ["20", "90", "90", "30", "30", "10"]
+    var timeLeftB = ["288", "500", "100", "39", "0", "10"]
+    
+    let tableSections = ["On Going", "Old" ]
+
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        TableView.dataSource = self
-        TableView.delegate = self
-//        TableView.register(TableView, forCellReuseIdentifier: "colorCell")
+        taskTableView.dataSource = self
+        taskTableView.delegate = self
         
-        SecondTableView.dataSource = self
-        SecondTableView.delegate = self
-//        SecondTableView.register(SecondTableView, forCellReuseIdentifier: "secondCell")
+        taskTableView.sectionIndexColor = UIColor.white
+        
+        
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        var count = 0
+    //return the number of sections
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return tableSections.count
+    }
+    
+    //return the title of sections
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.tableSections[section]
+    }
+    
+    
+    //return the rows number
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        switch(Controller.selectedSegmentIndex)
+        
+        switch(segmentedControl.selectedSegmentIndex)
         {
         case 0:
-            if tableView == self.TableView
-            {
-                count = names.count
-            }
-            
-            if tableView == self.SecondTableView
-            {
-                count = names.count
-            }
-            break
-        
+           return namesA.count
+           
         case 1:
-            if tableView == self.TableView
-            {
-                count = names.count
-            }
-            
-            if tableView == self.SecondTableView
-            {
-                count = names.count
-            }
-            break
+            return namesB.count
             
         default:
-            break
+            return 1
         }
-        
-        return count
         
     }
     
+    //return the cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        
-        var cell: TasksTableViewCell?
-        
-        switch(Controller.selectedSegmentIndex)
+        switch(segmentedControl.selectedSegmentIndex) //SWITCH SEGMENTED
         {
-            
         case 0:
-            if tableView == self.TableView
-            {
-                cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath) as? TasksTableViewCell
-                let nameLabel = names[indexPath.row]
-                let surnameLabel = surnames[indexPath.row]
-                let skillLabel = skill[indexPath.row]
-                let timeRemainingLabel = timeRemaining[indexPath.row]
-                let timeRequestedLabel = timeRequested[indexPath.row]
+            switch (indexPath.section) {  //SWITCH SECTION
+            case 0: //ON GOING
+                let cell = tableView.dequeueReusableCell(withIdentifier: "onGoingCell") as! OnGoingTaskCell
+                cell.nameSurnameLabel?.text = namesA[indexPath.row] + " " + surnamesA[indexPath.row]
+                cell.skillRequestedLabel?.text = skillsA[indexPath.row]
+                cell.timeRequestedLabel?.text = "(" + timeRequestedA[indexPath.row] + " minutes)"
+                cell.timeLeftLabel?.text = timeLeftA[indexPath.row]
                 
-                cell!.labelName!.text = nameLabel
-                cell!.labelSurname!.text = surnameLabel
-                cell!.labelSkill!.text = skillLabel
-                cell!.labelTimeRemaining!.text = timeRemainingLabel + " min"
-                cell!.labelTimeRequested!.text = "(" + timeRequestedLabel + " minutes)"
-            }
-            
-            if tableView == self.SecondTableView
-            {
-                cell = tableView.dequeueReusableCell(withIdentifier: "secondCell", for: indexPath) as? TasksTableViewCell
-                let nameLabel = names[indexPath.row]
-                let surnameLabel = surnames[indexPath.row]
-                let skillLabel = skill[indexPath.row]
-                let timeRemainingLabel = timeRemaining[indexPath.row]
-                let timeRequestedLabel = timeRequested[indexPath.row]
+                //cell.nameSurnameLabel?.sizeToFit()
+                cell.nameSurnameLabel?.adjustsFontSizeToFitWidth = true
+                cell.skillRequestedLabel?.sizeToFit()
+                cell.timeRequestedLabel?.sizeToFit()
+                cell.timeLeftLabel?.sizeToFit()
+               
+                onGoingCellAnimation(imageView: cell.animationImageView!)
                 
-                cell!.labelNameSecond.text = nameLabel
-                cell!.labelSurnameSecond.text = surnameLabel
-                cell!.labelSkillSecond.text = skillLabel
-                cell!.labelTimeRemainingSecond.text = timeRemainingLabel + " min"
-                cell!.labelTimeRequestedSecond.text = "(" + timeRequestedLabel + " minutes)"
+                
+                return cell
+                
+            case 1: //OLD
+                let cell = tableView.dequeueReusableCell(withIdentifier: "oldCell") as! oldTaskCell
+                cell.nameSurnameLabel?.text = namesB[indexPath.row] + " " + surnamesB[indexPath.row]
+                cell.skillRequestedLabel?.text = skillsB[indexPath.row]
+                cell.timeRequestedLabel?.text = timeRequestedB[indexPath.row]
+                
+                cell.nameSurnameLabel.adjustsFontSizeToFitWidth = true
+                cell.skillRequestedLabel.sizeToFit()
+                cell.timeRequestedLabel.sizeToFit()
+                
+                
+                return cell
+                
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "oldCell")
+                
             }
-            break
             
         case 1:
-            if tableView == self.TableView
-            {
-                cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath) as? TasksTableViewCell
-                let nameLabel = namesSegmented[indexPath.row]
-                let surnameLabel = surnamesSegmented[indexPath.row]
-                let skillLabel = skillSegmented[indexPath.row]
-                let timeRemainingLabel = timeRemainingSegmented[indexPath.row]
-                let timeRequestedLabel = timeRequestedSegmented[indexPath.row]
+            switch (indexPath.section) {  //SWITCH SECTION
+            case 0: //ON GOING
+                let cell = tableView.dequeueReusableCell(withIdentifier: "onGoingCell") as! OnGoingTaskCell
+                cell.nameSurnameLabel?.text = namesB[indexPath.row] + " " + surnamesB[indexPath.row]
+                cell.skillRequestedLabel?.text = skillsB[indexPath.row]
+                cell.timeRequestedLabel?.text = "(" + timeRequestedB[indexPath.row] + " minutes)"
+                cell.timeLeftLabel?.text = timeLeftB[indexPath.row]
                 
-                cell!.labelName!.text = nameLabel
-                cell!.labelSurname!.text = surnameLabel
-                cell!.labelSkill!.text = skillLabel
-                cell!.labelTimeRemaining!.text = timeRemainingLabel + " min"
-                cell!.labelTimeRequested!.text = "(" + timeRequestedLabel + " minutes)"
+                //cell.nameSurnameLabel?.sizeToFit()
+                cell.nameSurnameLabel?.adjustsFontSizeToFitWidth = true
+                cell.skillRequestedLabel?.sizeToFit()
+                cell.timeRequestedLabel?.sizeToFit()
+                cell.timeLeftLabel?.sizeToFit()
+                
+                onGoingCellAnimation(imageView: cell.animationImageView!)
+
+                
+                return cell
+                
+            case 1: //OLD
+                let cell = tableView.dequeueReusableCell(withIdentifier: "oldCell") as! oldTaskCell
+                cell.nameSurnameLabel?.text = namesA[indexPath.row] + " " + surnamesB[indexPath.row]
+                cell.skillRequestedLabel?.text = skillsA[indexPath.row]
+                cell.timeRequestedLabel?.text = timeRequestedA[indexPath.row]
+                
+                cell.nameSurnameLabel.adjustsFontSizeToFitWidth = true
+                cell.skillRequestedLabel.sizeToFit()
+                cell.timeRequestedLabel.sizeToFit()
+                
+                
+                return cell
+                
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "oldCell")
+                
             }
             
-            if tableView == self.SecondTableView
-            {
-                cell = tableView.dequeueReusableCell(withIdentifier: "secondCell", for: indexPath) as? TasksTableViewCell
-                let nameLabel = namesSegmented[indexPath.row]
-                let surnameLabel = surnamesSegmented[indexPath.row]
-                let skillLabel = skillSegmented[indexPath.row]
-                let timeRemainingLabel = timeRemainingSegmented[indexPath.row]
-                let timeRequestedLabel = timeRequestedSegmented[indexPath.row]
-                
-                cell!.labelNameSecond.text = nameLabel
-                cell!.labelSurnameSecond.text = surnameLabel
-                cell!.labelSkillSecond.text = skillLabel
-                cell!.labelTimeRemainingSecond.text = timeRemainingLabel + " min"
-                cell!.labelTimeRequestedSecond.text = "(" + timeRequestedLabel + " minutes)"
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "oldCell")
+                return cell!
+              
             }
-            break
-        
-        default:
-            break
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "oldCell")
         return cell!
     }
     
+    
     @IBAction func Controller(_ sender: UISegmentedControl)
     {
-        TableView.reloadData()
-        SecondTableView.reloadData()
+        taskTableView.reloadData()
+    }
+    
+    
+    //Custom Animation Function on UIImageView
+    func onGoingCellAnimation(imageView: UIImageView) {
+        
+        let loadingImagesAnimation: [UIImage] = [#imageLiteral(resourceName: "loading-0"),#imageLiteral(resourceName: "loading-1"),#imageLiteral(resourceName: "loading-2"),#imageLiteral(resourceName: "loading-3"),#imageLiteral(resourceName: "loading-4"),#imageLiteral(resourceName: "loading-5"),#imageLiteral(resourceName: "loading-6"),#imageLiteral(resourceName: "loading-7"),#imageLiteral(resourceName: "loading-8")]
+        
+        imageView.animationImages = loadingImagesAnimation
+        imageView.animationDuration = 0.8
+        imageView.animationRepeatCount = 0
+        imageView.startAnimating()
+    }
+    
+    
+    //TableView Custom Header
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        if let view = view as? UITableViewHeaderFooterView {
+            view.backgroundView?.backgroundColor = UIColor.black
+            view.textLabel?.textColor = UIColor.white
+            view.textLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+        }
+        
     }
 
 }

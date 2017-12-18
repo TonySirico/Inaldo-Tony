@@ -34,11 +34,13 @@ class RoundedButton: UIButton {
             
             self.backgroundColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:0.6)
             self.titleLabel?.textColor = UIColor.black
+            self.layer.borderWidth = 2.5
             
         } else {
             if self.backgroundColor != mainColor {
                 self.backgroundColor = UIColor.black
                 self.titleLabel?.textColor = UIColor(red:0.48, green:0.73, blue:0.84, alpha:1.0)
+                
             } else {
                 self.titleLabel?.textColor = UIColor.black
             }

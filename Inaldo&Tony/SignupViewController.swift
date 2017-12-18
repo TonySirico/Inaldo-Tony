@@ -34,7 +34,9 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    //outlets
+/*-----------OUTLETS-----------*/
+    
+    //TextFields
     @IBOutlet weak var nameTextField: RoundedUITextField!
     @IBOutlet weak var surnameTextField: RoundedUITextField!
     @IBOutlet weak var emailTextField: RoundedUITextField!
@@ -43,13 +45,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: RoundedUITextField!
     @IBOutlet weak var descriptionTextField: AlternativeRoundedUITextField!
     
-    
-    
-    
-    
-    @IBOutlet weak var datePicker: UIDatePicker!
-    
-    
+    //Buttons
+    @IBOutlet weak var imageSelectionButton: UIButton!
     @IBOutlet weak var codingButton: RoundedButton!
     @IBOutlet weak var designButton: RoundedButton!
     @IBOutlet weak var businessButton: RoundedButton!
@@ -57,18 +54,19 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scienceButton: RoundedButton!
     @IBOutlet weak var otherButton: RoundedButton!
     
+    //BUTTONS ACTIONS
+    @IBAction func imageSelectionAction(_ sender: Any) {
+    }
+    
     @IBAction func codingAction(_ sender: Any) {
         if !codingButton.isSelected {
             deselectAllButtons()
             codingButton.isSelected = true
             descriptionTextField.text! = coding
             flag = "coding"
-            
         }
         
-        
     }
-    
     
     @IBAction func designAction(_ sender: Any) {
         if !designButton.isSelected {
@@ -76,7 +74,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             designButton.isSelected = true
             descriptionTextField.text! = design
             flag = "design"
-            
         }
     }
     
@@ -125,10 +122,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         
        
         
-        //picker
-       // datePicker.setValue(UIColor.white, forKeyPath: "textColor")
-        
-        //delegate
+        //TextField delegate
         self.nameTextField.delegate = self
         self.surnameTextField.delegate = self
         self.emailTextField.delegate = self
@@ -136,18 +130,15 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         self.passwordTextField.delegate = self
         self.descriptionTextField.delegate = self
         
-        //Edit the placeholder into the main storyboard
+        //  **Edit the placeholder into the main storyboard**
         
         //Calling DatePicker when typing into birthdayTextField
         let myDatePicker = UIDatePicker()
         myDatePicker.datePickerMode = UIDatePickerMode.date
         myDatePicker.addTarget(self, action: #selector(SignupViewController.datePickeralueChanged(sender:)), for: UIControlEvents.valueChanged)
         birthdayTextField.inputView = myDatePicker
-        
         myDatePicker.setValue(UIColor.white, forKeyPath: "textColor")
         myDatePicker.setValue(UIColor.black, forKey: "backgroundColor")
-        
-        descriptionTextField.editingRect(forBounds: CGRect(x: 80, y: 0, width: 0, height: 0))
         
     }
 
@@ -163,10 +154,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         
         
         //KeyboardNotificationTrigger
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)),
-                                               name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)),
-                                               name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 
     }
     
@@ -191,22 +180,24 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         descriptionFill()
-        print("TEXTFIELD DID END \(flag)")
     }
     
 
     
     @objc func keyboardWillShow(notification: Notification) {
-    let userInfo:NSDictionary = notification.userInfo! as NSDictionary
-    let keyboardFrame:NSValue = userInfo.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
-    let keyboardRectangle = keyboardFrame.cgRectValue
-    let keyboardHeight = keyboardRectangle.height
-    // do whatever you want with this keyboard height
-      super.view.frame.origin = CGPoint(x: 0.0, y: -(keyboardHeight - 50.0))
+        
+        let userInfo:NSDictionary = notification.userInfo! as NSDictionary
+        let keyboardFrame:NSValue = userInfo.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        let keyboardHeight = keyboardRectangle.height
+        
+        //Move view according to keyboard height
+        super.view.frame.origin = CGPoint(x: 0.0, y: -(keyboardHeight - 50.0))
         
     }
     
     @objc func keyboardWillHide(notification: Notification) {
+        //Move view into original position
        super.view.frame.origin = CGPoint(x: 0.0, y: 0.0)
         
     }
@@ -297,7 +288,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         let formatter = DateFormatter()
         formatter.dateStyle = DateFormatter.Style.medium
         formatter.timeStyle = DateFormatter.Style.none
-        formatter.dateFormat = "dd/MMMM/y"
+        formatter.dateFormat = "dd  MMMM y"
         birthdayTextField.text = formatter.string(from: sender.date)
     }
 
