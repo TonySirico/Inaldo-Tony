@@ -11,8 +11,16 @@ import UIKit
 
 var isSearchBarShrinked = false
 
-class HomeViewController: UIViewController, UISearchBarDelegate {
+class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
     
+    var names = ["Cecilia", "Pasquale", "Astrogildo", "Natalia", "Lis", "Perna"]
+    var surnames = ["Silva Ribeiro", "Antonio Ramos Ribeiro", "Toschi Magalhes", "Salti", "Pereira Rios", "Oliveira da Silva Sauro"]
+    var skills = ["Coding", "Desing", "Business", "Languages", "Other", "Other"]
+    var timeRequested = ["50", "90", "130", "100", "11", "30"]
+    var timeLeft = ["12", "7", "100", "800", "47", "99"]
+    
+    var profilePhoto = [#imageLiteral(resourceName: "dummyProfilePic"), #imageLiteral(resourceName: "Coding"), #imageLiteral(resourceName: "Design"), #imageLiteral(resourceName: "Music"), #imageLiteral(resourceName: "Design"), #imageLiteral(resourceName: "Music")]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,6 +49,9 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
         tableViewOutlet.frame.origin = CGPoint (x:0, y:super.view.frame.height)
         
         searchBarOutlet.delegate = self
+        
+        tableViewOutlet.delegate = self
+        tableViewOutlet.dataSource = self
         
         // Do any additional setup after loading the view.
     }
@@ -191,6 +202,25 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var tableViewOutlet: UITableView!
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return names.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! HomeTableViewCell
+        
+        cell.nameHomeLabel.text = names[indexPath.row]
+        cell.surnameHomeLabel.text = surnames[indexPath.row]
+        cell.imageHomeLabel.image = profilePhoto[indexPath.row]
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableViewOutlet.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: "goToProfile", sender: self)
+    }
+
     @IBOutlet weak var firstButtonOutlet: UIButton!
     @IBAction func firstButtonAction(_ sender: UIButton) {
         prepareBackButtonForCategories()
