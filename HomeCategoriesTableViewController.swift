@@ -25,14 +25,17 @@ class HomeCategoriesTableViewController: UIViewController, UITableViewDataSource
     var timeLeft = ["12", "7", "100", "800", "47", "99"]
     
     var profilePhoto = [#imageLiteral(resourceName: "dummyProfilePic"), #imageLiteral(resourceName: "Coding"), #imageLiteral(resourceName: "Design"), #imageLiteral(resourceName: "Music"), #imageLiteral(resourceName: "Design"), #imageLiteral(resourceName: "Music")]
+    
+    var stringPassed = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableViewOutlet.delegate = self
         tableViewOutlet.dataSource = self
-
-        // Do any additional setup after loading the view.
+        
+        labelCategories.text = stringPassed
+        
     }
 
     @IBOutlet weak var tableViewOutlet: UITableView!

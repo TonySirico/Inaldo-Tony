@@ -228,12 +228,23 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewData
         moveLabelIn()
     }
     
-    @IBOutlet weak var secondButtonOutlet: UIButton!
-    @IBAction func secondButtonAction(_ sender: UIButton) {
+   @IBOutlet weak var secondButtonOutlet: UIButton!
+
+    @IBAction func secondButtonAction(_ sender: UIButton)
+    {
+    
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "HomeCategoriesTableViewController") as! HomeCategoriesTableViewController
+        
+        myVC.stringPassed = "teste"
+        navigationController?.pushViewController(myVC, animated: true)
+        
+    }
+    
+   /* @IBAction func secondButtonAction(_ sender: UIButton) {
         prepareBackButtonForCategories()
         categoryLabelOutlet.text = "Design"
         moveLabelIn()
-    }
+    } */
     
     @IBOutlet weak var thirdButtonOutlet: UIButton!
     @IBAction func thirdButtonAction(_ sender: UIButton) {

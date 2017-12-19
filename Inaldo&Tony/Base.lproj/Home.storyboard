@@ -13,7 +13,7 @@
         <!--Home-->
         <scene sceneID="ugq-pH-WOU">
             <objects>
-                <viewController title="Home" id="tle-9f-hMS" customClass="HomeViewController" customModule="Inaldo_Tony" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" title="Home" id="tle-9f-hMS" customClass="HomeViewController" customModule="Inaldo_Tony" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kez-qp-7nR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,8 +81,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="Design"/>
                                 <connections>
-                                    <action selector="secondButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="xxE-wv-Ddu"/>
-                                    <segue destination="gv9-Jw-hIw" kind="show" id="0xH-xd-VQW"/>
+                                    <action selector="secondButtonAction:" destination="tle-9f-hMS" eventType="touchUpInside" id="kC2-SX-IO6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xf3-rp-MXZ">
@@ -193,7 +192,7 @@
         <!--Home Categories Table View Controller-->
         <scene sceneID="Klo-H7-dge">
             <objects>
-                <viewController id="gv9-Jw-hIw" customClass="HomeCategoriesTableViewController" customModule="Inaldo_Tony" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeCategoriesTableViewController" id="gv9-Jw-hIw" customClass="HomeCategoriesTableViewController" customModule="Inaldo_Tony" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sl7-r0-D4s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
